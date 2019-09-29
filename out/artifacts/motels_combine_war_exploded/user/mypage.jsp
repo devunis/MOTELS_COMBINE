@@ -11,7 +11,6 @@
     <title>MOTELS COMBINE</title>
 </head>
 <body>
-    <h1>[이름] 님 안녕하세요.</h1>
     <table>
         <tr>
             <th>pid</th>
