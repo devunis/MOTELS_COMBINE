@@ -8,9 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>MOTELS COMBINE</title>
   </head>
   <body>
+<<<<<<< HEAD
   ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+=======
+    <h1>MOTELS COMBILE</h1>
+    <a href="user/login.jsp">로그인</a>
+
+>>>>>>> 63a67e53193f129cedf075d32694008b7437ef4b
   </body>
 </html>
