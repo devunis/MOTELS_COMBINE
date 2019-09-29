@@ -1,11 +1,20 @@
 package model.member;
 
 public class MemberBean {
+    private int no;
     private String email;
-    private String pwd;
+    private String pw;
     private String name;
     private String tel;
     private int location;
+
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
+    }
 
     public String getEmail() {
         return email;
@@ -15,12 +24,12 @@ public class MemberBean {
         this.email = email;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getPw() {
+        return pw;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setPw(String pw) {
+        this.pw = pw;
     }
 
     public String getName() {

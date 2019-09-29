@@ -1,4 +1,4 @@
-package configuration;
+package Configuration;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -23,3 +23,4 @@ public class DatabaseConfiguration {
         }
     }
 }
+

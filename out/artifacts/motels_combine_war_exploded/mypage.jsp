@@ -11,20 +11,19 @@
     <title>MOTELS COMBINE</title>
 </head>
 <body>
+    <h1>${bean.getName()}님 안녕하세요.</h1>
     <table>
         <tr>
-            <th>pid</th>
             <th>이메일</th>
             <th>이름</th>
             <th>사는 곳</th>
             <th>연락처</th>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>${bean.getEmail()}</td>
+            <td>${bean.getName()}</td>
+            <td>${bean.getLocation()}</td>
+            <td>${bean.getTel()}</td>
         </tr>
     </table>
 

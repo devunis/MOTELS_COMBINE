@@ -17,7 +17,7 @@
 </head>
 <body>
     <h1>회원가입</h1>
-    <form action="">
+    <form action="proc.do" method="post">
         <label for="email">이메일</label>
         <input type="email" id="email" name="email" placeholder="이메일" />
 
@@ -28,7 +28,7 @@
         <input type="password" id="pw2" name="pw2" />
 
         <label for="name">닉네임</label>
-        <input type="password" id="name" name="name" />
+        <input type="text" id="name" name="name" />
 
         <label for="tel">연락처</label>
         <input type="tel" id="tel" name="tel" />
