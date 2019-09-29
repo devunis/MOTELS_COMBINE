@@ -8,9 +8,6 @@
     <artifactId>motels_combine</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <groupId>com.min</groupId>
-    <artifactId>Simple-Shopping-Mall</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
