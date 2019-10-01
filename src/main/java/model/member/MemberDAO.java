@@ -25,6 +25,7 @@ public class MemberDAO  {
 
 
     public void insertMember(MemberBean mbean){
+
         getConnection();
         try {
             String sql = "insert into motel.member values(no, ?,?,?,?,?)";

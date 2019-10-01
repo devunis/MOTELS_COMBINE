@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>MOTELS COMBILE</title>
+    <title>MOTELS COMBINE</title>
 </head>
 <body>
     <h1>로그인</h1>

@@ -21,6 +21,7 @@ public class JoinMember extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("EUC-KR");
         MemberBean mbean = new MemberBean();
         mbean.setNo(1);
         mbean.setEmail(req.getParameter("email"));

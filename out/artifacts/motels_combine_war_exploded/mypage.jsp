@@ -2,22 +2,22 @@
   Created by IntelliJ IDEA.
   User: eurob
   Date: 2019-09-29
-  Time: ì˜¤í›„ 5:32
+  Time: ¿ÀÈÄ 5:32
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 <html>
 <head>
     <title>MOTELS COMBINE</title>
 </head>
 <body>
-    <h1>${bean.getName()}ë‹˜ ì•ˆë…•í•˜ì„¸ìš”.</h1>
+    <h1>${bean.getName()}´Ô ¾È³çÇÏ¼¼¿ä.</h1>
     <table>
         <tr>
-            <th>ì´ë©”ì¼</th>
-            <th>ì´ë¦„</th>
-            <th>ì‚¬ëŠ” ê³³</th>
-            <th>ì—°ë½ì²˜</th>
+            <th>ÀÌ¸ŞÀÏ</th>
+            <th>ÀÌ¸§</th>
+            <th>»ç´Â °÷</th>
+            <th>¿¬¶ôÃ³</th>
         </tr>
         <tr>
             <td>${bean.getEmail()}</td>

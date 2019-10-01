@@ -2,13 +2,13 @@
   Created by IntelliJ IDEA.
   User: eurob
   Date: 2019-09-29
-  Time: ì˜¤í›„ 5:25
+  Time: ¿ÀÈÄ 5:25
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 <html>
 <head>
-    <title>MOTELS COMBILE</title>
+    <title>MOTELS COMBINE</title>
     <style>
         label, button {
             display: block;
@@ -16,52 +16,52 @@
     </style>
 </head>
 <body>
-    <h1>íšŒì›ê°€ìž…</h1>
+    <h1>È¸¿ø°¡ÀÔ</h1>
     <form action="proc.do" method="post">
-        <label for="email">ì´ë©”ì¼</label>
-        <input type="email" id="email" name="email" placeholder="ì´ë©”ì¼" />
+        <label for="email">ÀÌ¸ÞÀÏ</label>
+        <input type="email" id="email" name="email" placeholder="ÀÌ¸ÞÀÏ" />
 
-        <label for="pw">ë¹„ë°€ë²ˆí˜¸</label>
+        <label for="pw">ºñ¹Ð¹øÈ£</label>
         <input type="password" id="pw" name="pw" />
 
-        <label for="pw2">ë¹„ë°€ë²ˆí˜¸ ì¤‘ë³µí™•ì¸</label>
+        <label for="pw2">ºñ¹Ð¹øÈ£ Áßº¹È®ÀÎ</label>
         <input type="password" id="pw2" name="pw2" />
 
-        <label for="name">ë‹‰ë„¤ìž„</label>
+        <label for="name">´Ð³×ÀÓ</label>
         <input type="text" id="name" name="name" />
 
-        <label for="tel">ì—°ë½ì²˜</label>
+        <label for="tel">¿¬¶ôÃ³</label>
         <input type="tel" id="tel" name="tel" />
 
-        <label for="location">ì‚¬ëŠ” ì§€ì—­</label>
+        <label for="location">»ç´Â Áö¿ª</label>
         <select name="location" id="location">
-            <option value="1">ê°•ë‚¨êµ¬</option>
-            <option value="2">ê°•ë™êµ¬</option>
-            <option value="3">ê°•ë¶êµ¬</option>
-            <option value="4">ê°•ì„œêµ¬</option>
-            <option value="5">ê´€ì•…êµ¬</option>
-            <option value="6">ê´‘ì§„êµ¬</option>
-            <option value="7">êµ¬ë¡œêµ¬</option>
-            <option value="8">ê¸ˆì²œêµ¬</option>
-            <option value="9">ë…¸ì›êµ¬</option>
-            <option value="10">ë„ë´‰êµ¬</option>
-            <option value="11">ë™ëŒ€ë¬¸êµ¬</option>
-            <option value="12">ë™ìž‘êµ¬</option>
-            <option value="13">ë§ˆí¬êµ¬</option>
-            <option value="14">ì„œëŒ€ë¬¸êµ¬</option>
-            <option value="15">ì„œì´ˆêµ¬</option>
-            <option value="16">ì„±ë™êµ¬</option>
-            <option value="17">ì„±ë¶êµ¬</option>
-            <option value="18">ì†¡íŒŒêµ¬</option>
-            <option value="19">ì–‘ì²œêµ¬</option>
-            <option value="20">ì˜ë“±í¬êµ¬</option>
-            <option value="21">ìš©ì‚°êµ¬</option>
-            <option value="22">ì€í‰êµ¬</option>
-            <option value="23">ì¢…ë¡œêµ¬</option>
-            <option value="24">ì¤‘êµ¬</option>
-            <option value="25">ì¤‘ëž‘êµ¬</option>
+            <option value="1">°­³²±¸</option>
+            <option value="2">°­µ¿±¸</option>
+            <option value="3">°­ºÏ±¸</option>
+            <option value="4">°­¼­±¸</option>
+            <option value="5">°ü¾Ç±¸</option>
+            <option value="6">±¤Áø±¸</option>
+            <option value="7">±¸·Î±¸</option>
+            <option value="8">±ÝÃµ±¸</option>
+            <option value="9">³ë¿ø±¸</option>
+            <option value="10">µµºÀ±¸</option>
+            <option value="11">µ¿´ë¹®±¸</option>
+            <option value="12">µ¿ÀÛ±¸</option>
+            <option value="13">¸¶Æ÷±¸</option>
+            <option value="14">¼­´ë¹®±¸</option>
+            <option value="15">¼­ÃÊ±¸</option>
+            <option value="16">¼ºµ¿±¸</option>
+            <option value="17">¼ººÏ±¸</option>
+            <option value="18">¼ÛÆÄ±¸</option>
+            <option value="19">¾çÃµ±¸</option>
+            <option value="20">¿µµîÆ÷±¸</option>
+            <option value="21">¿ë»ê±¸</option>
+            <option value="22">ÀºÆò±¸</option>
+            <option value="23">Á¾·Î±¸</option>
+            <option value="24">Áß±¸</option>
+            <option value="25">Áß¶û±¸</option>
         </select>
-        <button type="submit">íšŒì›ê°€ìž…</button>
+        <button type="submit">È¸¿ø°¡ÀÔ</button>
     </form>
 </body>
 </html>
