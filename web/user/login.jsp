@@ -12,12 +12,12 @@
 </head>
 <body>
     <h1>로그인</h1>
-    <form action="proc.do" method="post">
+    <form action="/login.do" method="post">
         <label for="email">이메일</label>
         <input type="email" id="email" name="email" placeholder="이메일" />
         <label for="pw">비밀번호</label>
         <input type="password" id="pw" name="pw" />
-        <button type="submit">로그인</button>
+        <input type="submit" value="로그인">
     </form>
     <button onclick="location.href='index.jsp?main=/user/signup.jsp'">회원가입</button>
 </body>

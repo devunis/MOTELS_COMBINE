@@ -12,13 +12,18 @@
   </head>
   <body>
   <header>
+    <%
+      String main = request.getParameter("main");
+      if(main == null) main = "main.jsp";
+
+    %>
+
+
+
+
   <jsp:include page="header.jsp" />
     </header>
     <main>
-      <%
-        String main = request.getParameter("main");
-        if(main == null) main = "main.jsp";
-      %>
       <jsp:include page="<%=main%>" />
     </main>
   <footer>

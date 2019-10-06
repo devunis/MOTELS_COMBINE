@@ -1,4 +1,4 @@
-package controller;
+package controller.member;
 
 import model.member.MemberBean;
 import model.member.MemberDAO;
@@ -36,9 +36,6 @@ public class JoinMember extends HttpServlet {
         MemberDAO mdao = new MemberDAO();
         mdao.insertMember(mbean);
         System.out.println(mbean);
-        resp.sendRedirect("../index.jsp?");
-        //req.setAttribute("bean", mbean);
-        //RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
-        //rd.forward(req,resp);
+        resp.sendRedirect("../index.jsp?"); //상대주소기
     }
 }

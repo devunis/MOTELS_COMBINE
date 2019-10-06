@@ -3,9 +3,13 @@ package model.member;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+import java.io.StringReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class MemberDAO {
@@ -24,6 +28,8 @@ public class MemberDAO {
             e.printStackTrace();
         }
     }
+
+    // 회원 가입!
     public void insertMember(MemberBean mbean){
         getConnection();
         try {
@@ -41,35 +47,46 @@ public class MemberDAO {
             e.printStackTrace();
         }
     }
-    public void updateMember(MemberBean mbean) {
+
+
+
+
+
+    // 회원 조회
+    public boolean hasMember(String userEmail, String userPw) {
         getConnection();
-        try{
-            String sql = "update member set pwd=?, name=?, tel=?, location=? where email = ?";
+        boolean hasMember = false;
+        try {
+            String sql = "select email, pw from member where email=? and pw=?";
             pstmt = conn.prepareStatement(sql);
-
-            /*
-
-            */
-
-            pstmt.executeUpdate();
+            pstmt.setString(1, userEmail);
+            pstmt.setString(2,userPw);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                hasMember = true;
+            }
             conn.close();
-
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
+        return hasMember;
     }
 
-    public void deleteMember(MemberBean mbean){
+    // 로그인시 이메일을 통해 회원이름 출력(세션)
+    public String getMemberName(String email){
         getConnection();
+        String name = null;
         try{
-            String sql = "delete from member where email=?";
+            String sql = "select name from member where email=?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1,mbean.getEmail());
-            pstmt.executeUpdate();
+            pstmt.setString(1,email);
+            rs = pstmt.executeQuery();
+            if(rs.next())
+                name = rs.getString(1);
             conn.close();
-        }catch (Exception e){
+        } catch (Exception e){
             e.printStackTrace();
         }
+        return name;
     }
-
 }
