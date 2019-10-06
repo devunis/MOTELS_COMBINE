@@ -25,15 +25,15 @@ public class MemberDAO {
         }
     }
     public void insertMember(MemberBean mbean){
-
+        getConnection();
         try {
-            String sql = "insert into motel.member values(no,?,?,?,?,?)";
+            String sql = "insert into member values (no,?,?,?,?,?)";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, mbean.getEmail());
+            pstmt.setString(1,mbean.getEmail());
             pstmt.setString(2,mbean.getPw());
             pstmt.setString(3,mbean.getName());
             pstmt.setString(4,mbean.getTel());
-            pstmt.setInt(5,mbean.getLocation());
+            pstmt.setString(5,mbean.getLocation());
             pstmt.executeUpdate();
             conn.close();
 
@@ -44,13 +44,13 @@ public class MemberDAO {
     public void updateMember(MemberBean mbean) {
         getConnection();
         try{
-            String sql = "update motel.member set pwd=?, name=?, tel=?, location=? where email = ?";
+            String sql = "update member set pwd=?, name=?, tel=?, location=? where email = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1,mbean.getPw());
-            pstmt.setString(2,mbean.getName());
-            pstmt.setString(3,mbean.getTel());
-            pstmt.setInt(4,mbean.getLocation());
-            pstmt.setString(5,mbean.getEmail());
+
+            /*
+
+            */
+
             pstmt.executeUpdate();
             conn.close();
 
@@ -62,7 +62,7 @@ public class MemberDAO {
     public void deleteMember(MemberBean mbean){
         getConnection();
         try{
-            String sql = "delete from motel.member where email=?";
+            String sql = "delete from member where email=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1,mbean.getEmail());
             pstmt.executeUpdate();

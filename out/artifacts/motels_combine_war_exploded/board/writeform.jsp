@@ -9,7 +9,15 @@
 <html>
 <body>
 <form action="">
+<table>
+    <tr>
+        <td>제목</td>
+        <td><input type="text"></td>
+        <td>작성자</td>
+        <td>세션처리 예정</td>
+    </tr>
 
+</table>
 </form>
 </body>
 </html>

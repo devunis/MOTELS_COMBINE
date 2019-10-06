@@ -19,6 +19,6 @@
         <input type="password" id="pw" name="pw" />
         <button type="submit">로그인</button>
     </form>
-    <a href="index?main=/user/signup.jsp">회원가입</a>
+    <button onclick="location.href='index.jsp?main=/user/signup.jsp'">회원가입</button>
 </body>
 </html>

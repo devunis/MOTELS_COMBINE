@@ -6,7 +6,7 @@ public class MemberBean {
     private String pw;
     private String name;
     private String tel;
-    private int location;
+    private String location;
 
     public int getNo() {
         return no;
@@ -48,11 +48,23 @@ public class MemberBean {
         this.tel = tel;
     }
 
-    public int getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(int location) {
+    public void setLocation(String location) {
         this.location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "MemberBean{" +
+                "no=" + no +
+                ", email='" + email + '\'' +
+                ", pw='" + pw + '\'' +
+                ", name='" + name + '\'' +
+                ", tel='" + tel + '\'' +
+                ", location='" + location + '\'' +
+                '}';
     }
 }

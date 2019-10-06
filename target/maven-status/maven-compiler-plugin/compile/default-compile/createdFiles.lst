@@ -1,0 +1,6 @@
+controller/JoinMember.class
+model/member/MemberDAO.class
+model/board/BoardBean.class
+controller/BoardRegister.class
+model/member/MemberBean.class
+model/board/BoardDAO.class
