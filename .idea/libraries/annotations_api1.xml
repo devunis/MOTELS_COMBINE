@@ -1,7 +1,6 @@
 <component name="libraryTable">
-  <library name="jstl-1.2">
+  <library name="annotations-api1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../apache-tomcat-9.0.26/lib/jstl-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../apache-tomcat-9.0.26/lib/annotations-api.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../apache-tomcat-9.0.26/lib/catalina-ant.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../apache-tomcat-9.0.26/lib/catalina-ha.jar!/" />

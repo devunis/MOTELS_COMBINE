@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/proc.do")
+@WebServlet("/user/proc.do")
 public class JoinMember extends HttpServlet {
 
     @Override

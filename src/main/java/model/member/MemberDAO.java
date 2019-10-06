@@ -7,10 +7,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class MemberDAO  {
-    Connection conn;
-    PreparedStatement pstmt;
-    ResultSet rs;
+
+public class MemberDAO {
+
+    private Connection conn;
+    private PreparedStatement pstmt;
+    private  ResultSet rs;
 
     private void getConnection() {
         try {
@@ -22,13 +24,10 @@ public class MemberDAO  {
             e.printStackTrace();
         }
     }
-
-
     public void insertMember(MemberBean mbean){
 
-        getConnection();
         try {
-            String sql = "insert into motel.member values(no, ?,?,?,?,?)";
+            String sql = "insert into motel.member values(no,?,?,?,?,?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, mbean.getEmail());
             pstmt.setString(2,mbean.getPw());
@@ -42,13 +41,12 @@ public class MemberDAO  {
             e.printStackTrace();
         }
     }
-/*
     public void updateMember(MemberBean mbean) {
         getConnection();
         try{
             String sql = "update motel.member set pwd=?, name=?, tel=?, location=? where email = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1,mbean.getPwd());
+            pstmt.setString(1,mbean.getPw());
             pstmt.setString(2,mbean.getName());
             pstmt.setString(3,mbean.getTel());
             pstmt.setInt(4,mbean.getLocation());
@@ -73,6 +71,5 @@ public class MemberDAO  {
             e.printStackTrace();
         }
     }
-*/
 
 }

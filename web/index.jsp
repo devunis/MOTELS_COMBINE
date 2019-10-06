@@ -11,9 +11,18 @@
     <title>MOTELS COMBINE</title>
   </head>
   <body>
-
-    <h1>MOTELS COMBILE</h1>
-    <a href="login.jsp">로그인</a>
-
+  <header>
+  <jsp:include page="header.jsp" />
+    </header>
+    <main>
+      <%
+        String main = request.getParameter("main");
+        if(main == null) main = "main.jsp";
+      %>
+      <jsp:include page="<%=main%>" />
+    </main>
+  <footer>
+    <jsp:include page="footer.jsp" />
+  </footer>
   </body>
 </html>
