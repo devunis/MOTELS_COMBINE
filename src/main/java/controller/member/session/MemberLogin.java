@@ -1,4 +1,4 @@
-package controller.member;
+package controller.member.session;
 
 import model.member.MemberDAO;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 
 
 @WebServlet("/login.do")
-public class Login extends HttpServlet {
+public class MemberLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         reqPro(req, resp);

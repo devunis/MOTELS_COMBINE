@@ -1,4 +1,4 @@
-package controller.member;
+package controller.member.session;
 
 import model.member.MemberBean;
 import model.member.MemberDAO;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/user/proc.do")
-public class JoinMember extends HttpServlet {
+public class MemberJoin extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
