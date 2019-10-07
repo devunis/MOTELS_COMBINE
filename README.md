@@ -1,8 +1,8 @@
-# MOTELS_COMBINE
-#웹서버
+### MOTELS_COMBINE
+### 웹서버
 
 * 10/6 - tomcat & library 
-          (tomcat folder, lib foler in tomcat folder)
+          (tomcat folder, lib folder in tomcat folder)
 
 * 10/7 - Session Completed!
   
