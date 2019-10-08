@@ -1,4 +1,5 @@
-<%--
+<%@ page import="model.board.BoardBean" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: min
   Date: 19. 10. 5.
@@ -8,37 +9,32 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
+<%
+    List<BoardBean> list = (List<BoardBean>) request.getAttribute("list");
+%>
 <h1>게시판</h1>
 <h2>글목록 있을 예정</h2>
-<table border="1">
+<table>
     <tr>
-        <td>글번호</td>
-        <td><a href="">제목</a></td>
-        <td>작성자</td>
-        <td>작성일자</td>
+        <td>No</td>
+        <td>제목</td>
+        <td>날짜</td>
         <td>조회수</td>
     </tr>
-    <tr>
-        <td>1</td>
-        <td><a href="">환불문의</a></td>
-        <td>승민</td>
-        <td>2019-09-11</td>
-        <td>1</td>
-    </tr>
-</table>
-<p>
-    <a href="">1</a>&nbsp;
-    <a href="">2</a>&nbsp;
-    <a href="">3</a>&nbsp;
-    <a href="">4</a>&nbsp;
-    <a href="">5</a>&nbsp;
-    <a href="">6</a>&nbsp;
-    <a href="">7</a>&nbsp;
-    <a href="">8</a>&nbsp;
-    <a href="">9</a>&nbsp;
-    <a href="">10</a>
 
-</p>
-<a href="/board/writeform.jsp">글쓰기</a>
+    <% for (BoardBean boardBean : list) {%>
+    <tr>
+        <td><%=boardBean.getNo()%>
+        </td>
+        <td><a href=""><%=boardBean.getTitle()%>
+        </a></td>
+        <td><%=boardBean.getDate()%>
+        </td>
+        <td><%=boardBean.getReadcnt()%>
+        </td>
+    </tr>
+    <%}%>
+</table>
+<button onclick="location.href='index.jsp?main=/board/writeform.jsp'">게시글작성</button>
 </body>
 </html>

@@ -2,13 +2,14 @@ package model.board;
 
 public class BoardBean {
     private int no;
-    private int ref;
-    private int step;
     private String title;
     private String author;
+    private String pw;
     private String date;
-    private int read_cnt;
-    private String content;
+    private String contents;
+    private int readcnt;
+    private int ref;
+    private int ref_step;
 
     public int getNo() {
         return no;
@@ -16,22 +17,6 @@ public class BoardBean {
 
     public void setNo(int no) {
         this.no = no;
-    }
-
-    public int getRef() {
-        return ref;
-    }
-
-    public void setRef(int ref) {
-        this.ref = ref;
-    }
-
-    public int getStep() {
-        return step;
-    }
-
-    public void setStep(int step) {
-        this.step = step;
     }
 
     public String getTitle() {
@@ -50,6 +35,14 @@ public class BoardBean {
         this.author = author;
     }
 
+    public String getPw() {
+        return pw;
+    }
+
+    public void setPw(String pw) {
+        this.pw = pw;
+    }
+
     public String getDate() {
         return date;
     }
@@ -58,19 +51,49 @@ public class BoardBean {
         this.date = date;
     }
 
-    public int getRead_cnt() {
-        return read_cnt;
+    public String getContents() {
+        return contents;
     }
 
-    public void setRead_cnt(int read_cnt) {
-        this.read_cnt = read_cnt;
+    public void setContents(String contents) {
+        this.contents = contents;
     }
 
-    public String getContent() {
-        return content;
+    public int getReadcnt() {
+        return readcnt;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setReadcnt(int readcnt) {
+        this.readcnt = readcnt;
+    }
+
+    public int getRef() {
+        return ref;
+    }
+
+    public void setRef(int ref) {
+        this.ref = ref;
+    }
+
+    public int getRef_step() {
+        return ref_step;
+    }
+
+    public void setRef_step(int ref_step) {
+        this.ref_step = ref_step;
+    }
+
+    @Override
+    public String toString() {
+        return "BoardBean{" +
+                "no=" + no +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", date='" + date + '\'' +
+                ", contents='" + contents + '\'' +
+                ", readcnt=" + readcnt +
+                ", ref=" + ref +
+                ", ref_step=" + ref_step +
+                '}';
     }
 }

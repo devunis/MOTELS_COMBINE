@@ -1,5 +1,9 @@
 package controller.board.boardupdate;
 
+import model.board.BoardBean;
+import model.board.BoardDAO;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +25,17 @@ public class BoardRegister extends HttpServlet {
 
     }
     private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        BoardDAO bdao = new BoardDAO();
+        BoardBean boardBean = new BoardBean();
+        boardBean.setTitle(req.getParameter("title"));
+        boardBean.setAuthor(req.getParameter("author"));
+        boardBean.setPw(req.getParameter("pw"));
+        boardBean.setContents(req.getParameter("contents"));
+        bdao.createBoard(boardBean);
+        resp.sendRedirect("index.jsp");
 
     }
 }
+
+

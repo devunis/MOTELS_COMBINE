@@ -20,7 +20,6 @@ public class MemberJoin extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("EUC-KR");
         reqPro(req, resp);
     }
 
