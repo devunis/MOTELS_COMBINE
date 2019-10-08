@@ -33,7 +33,8 @@ public class BoardRegister extends HttpServlet {
         boardBean.setPw(req.getParameter("pw"));
         boardBean.setContents(req.getParameter("contents"));
         bdao.createBoard(boardBean);
-        resp.sendRedirect("index.jsp");
+
+
 
     }
 }

@@ -24,6 +24,7 @@ public class MemberLogout extends HttpServlet {
     private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         session.setAttribute("email", null);
+        session.setAttribute("name", null);
         session.setMaxInactiveInterval(0);
         RequestDispatcher dispatcher = req.getRequestDispatcher("header.jsp");
         dispatcher.forward(req,resp);
