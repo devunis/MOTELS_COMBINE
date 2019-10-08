@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/user/proc.do")
+@WebServlet("/proc.do")
 public class MemberJoin extends HttpServlet {
 
     @Override
@@ -25,7 +25,7 @@ public class MemberJoin extends HttpServlet {
     }
 
     private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("EUC-KR");
+        req.setCharacterEncoding("UTF-8");
 
         MemberBean mbean = new MemberBean();
         mbean.setEmail(req.getParameter("email"));
