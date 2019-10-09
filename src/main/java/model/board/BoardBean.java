@@ -83,17 +83,5 @@ public class BoardBean {
         this.ref_step = ref_step;
     }
 
-    @Override
-    public String toString() {
-        return "BoardBean{" +
-                "no=" + no +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", date='" + date + '\'' +
-                ", contents='" + contents + '\'' +
-                ", readcnt=" + readcnt +
-                ", ref=" + ref +
-                ", ref_step=" + ref_step +
-                '}';
-    }
+
 }
