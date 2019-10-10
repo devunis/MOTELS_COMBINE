@@ -84,4 +84,40 @@ public class MemberDAO {
         }
         return name;
     }
+
+    //회원 탈퇴
+    public void deleteMember(String email){
+        getConnection();
+        try{
+            String sql = "delete from member where email=?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,email);
+            pstmt.executeUpdate();
+            conn.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    //회언 수정
+    public void updateMember(MemberBean mbean){
+        getConnection();
+        try{
+            String sql = "update member set name=?, pw=?, tel=?, location=?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,mbean.getName());
+            pstmt.setString(2,mbean.getPw());
+            pstmt.setString(3,mbean.getTel());
+            pstmt.setString(4,mbean.getLocation());
+            pstmt.executeUpdate();
+            conn.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 }
