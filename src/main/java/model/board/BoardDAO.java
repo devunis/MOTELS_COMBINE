@@ -26,19 +26,33 @@ public class BoardDAO {
     }
 
     // 게시글 작성
-    public void createBoard(BoardBean boardBean){
+    public boolean createBoard(BoardBean boardBean){
         getConnection();
-
+        boolean chk = false;
         try{
-            String sql = "insert into board values(no,?,?,?,now(),?,0,1,1)";
+            String sql = "insert into board values (no,?,?,?,now(),?,0,1,1)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1,boardBean.getTitle());
             pstmt.setString(2,boardBean.getAuthor());
             pstmt.setString(3,boardBean.getPw());
             pstmt.setString(4,boardBean.getContents());
             pstmt.executeUpdate();
+            System.out.println(boardBean);
             conn.close();
+            chk = true;
         }catch (Exception e ){
+            e.printStackTrace();
+        }
+        return chk;
+    }
+
+    //게시글 열람
+    public List<BoardBean> readBoard(int no) {
+        getConnection();
+
+        try {
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
