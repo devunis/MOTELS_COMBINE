@@ -27,7 +27,7 @@
     <tr>
         <td><%=boardBean.getNo()%>
         </td>
-        <td><a href="/board/read?no=<%=boardBean.getNo()%>"><%=boardBean.getTitle()%>
+        <td><a href="/read?no=<%=boardBean.getNo()%>"><%=boardBean.getTitle()%>
         </a></td>
         <td><%=boardBean.getDate()%>
         </td>

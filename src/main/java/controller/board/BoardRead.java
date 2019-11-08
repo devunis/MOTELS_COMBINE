@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet("/board/read")
+@WebServlet("/read")
 public class BoardRead extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,7 +34,8 @@ public class BoardRead extends HttpServlet {
         req.setAttribute("reply", reply);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=/board/read.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=/board/readboard.jsp");
         dispatcher.forward(req,resp);
+
     }
 }

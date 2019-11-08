@@ -44,10 +44,12 @@ public class BoardMain extends HttpServlet {
         //List<BoardBean> boardList = bdao.getAllBoard(start, end);
         number = count - (currentPage-1) * PAGE_SIZE;
 
-        req.setAttribute("pageSize", PAGE_SIZE);
-        req.setAttribute("count", count);
-        req.setAttribute("currentPage", currentPage);
+        //req.setAttribute("pageSize", PAGE_SIZE);
+        //req.setAttribute("count", count);
+        //req.setAttribute("currentPage", currentPage);
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=/board/boardmain.jsp");
         dispatcher.forward(req,resp);
+
+
     }
 }

@@ -1,5 +1,4 @@
 <%@ page import="model.board.BoardBean" %>
-<%@ page import="java.util.Date" %>
 <%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: min
