@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.member.MemberDAO" %><%--
   Created by IntelliJ IDEA.
   User: min
   Date: 19. 10. 7.
@@ -13,6 +13,9 @@
 <%
     String email = (String) session.getAttribute("email");
     String name = (String) session.getAttribute("name");
+    MemberDAO mdao = new MemberDAO();
+    String location = mdao.getMemberLoc(email);
+    String tel = mdao.getMemberTel(email);
     if (name == null) {
 %>
 <script>
@@ -23,7 +26,7 @@
     }
 %>
 
-<h1>이메일 <%=email%>, 이름 <%=name%>, 사는곳, 전화번호</h1>
+<h1>이메일 <%=email%>, 이름 <%=name%>, 사는곳 <%=location%>, 전화번호 <%=tel%></h1>
 <button onclick="location.href='index.jsp?main=/mypage/updateinfo.jsp'">회원수정</button>
 <button onclick="location.href='index.jsp?main=/mypage/deleteinfo.jsp'">회원탈퇴</button>
 

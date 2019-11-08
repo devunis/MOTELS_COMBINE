@@ -18,14 +18,16 @@
         location varchar(30) not null
     );
     
-    create table board
-    (
+    create table board (
         no       int primary key auto_increment,
         title    varchar(50) not null,
         author   varchar(30) not null,
+        pw       varchar(30) not null,
         date     varchar(30) not null,
+        contents varchar(500) not null,
         readcnt  int         not null,
         ref      int         not null,
         ref_step int         not null
-    );
+
+    )
  
