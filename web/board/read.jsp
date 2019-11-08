@@ -1,4 +1,5 @@
-<%@ page import="model.board.BoardBean" %><%--
+<%@ page import="model.board.BoardBean" %>
+<%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: min
   Date: 19. 11. 8.
@@ -30,16 +31,29 @@
             </td>
         </tr>
     </table>
+    <br><br>
+
+    <h1>댓글</h1>
+    <table border="1">
+        <tr>
+            <td>작성자</td>
+            <td>내용</td>
+            <td>작성일자</td>
+        </tr>
+        <% for (int i=0; i<10 ;i++) {%>
+        <tr>
+            <td>한승민</td>
+            <td>123123</td>
+            <td><%=new Date()%></td>
+            <td><button onclick="href='#'">수정하기</button></td>
+            <td><button onclick="href='#'">삭제하기</button></td>
+        </tr>
+        <% } %>
+    </table>
 
 
-    <form action="">
+    <form action="/register" method="post">
         <table border="1">
-
-
-
-
-
-
             <tr>
                 <td rowspan="3"><textarea name="" id="" cols="30" rows="10"></textarea></td>
                 <td><input type="submit" value="댓글달기"></td>
