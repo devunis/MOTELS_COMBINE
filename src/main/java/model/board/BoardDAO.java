@@ -46,18 +46,6 @@ public class BoardDAO {
         return chk;
     }
 
-    //게시글 열람
-    public List<BoardBean> readBoard(int no) {
-        getConnection();
-        List<BoardBean> list = null;
-        try {
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
-
     // 게시글 개수 리턴
     public int boardCnt() {
         getConnection();
@@ -69,6 +57,7 @@ public class BoardDAO {
             if(rs.next()){
                 cnt = rs.getInt(1);
             }
+            conn.close();
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -173,10 +162,10 @@ public class BoardDAO {
                 bean.setDate(rs.getString(6));
                 reply.add(bean);
             }
+            conn.close();
         }catch (Exception e ){
             e.printStackTrace();
         }
-
         return reply;
     }
 }

@@ -72,7 +72,7 @@
             </tr>
         </table>
     </form>
-<button>글 수정</button>
-<button>글 삭제</button>
+<button onclick="href='#'">글 수정</button>
+<button onclick="href='#'">글 삭제</button>
 </body>
 </html>
