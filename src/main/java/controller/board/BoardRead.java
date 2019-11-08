@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet("/board/read")
 public class BoardRead extends HttpServlet {
@@ -20,13 +21,19 @@ public class BoardRead extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         int boardNo = Integer.parseInt(req.getParameter("no"));
+
+        //게시글
         BoardDAO bdao = new BoardDAO();
         BoardBean bean = bdao.getContents(boardNo);
-
-
-
         req.setAttribute("bean", bean);
+
+        //해당 게시글 댓글 뿌려주기
+        ArrayList<BoardBean> reply = bdao.getReply(boardNo);
+        req.setAttribute("reply", reply);
+
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp?main=/board/read.jsp");
         dispatcher.forward(req,resp);
     }

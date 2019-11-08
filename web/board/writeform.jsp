@@ -19,7 +19,7 @@
 <%
 }
 %>
-<form action="register" method="post">
+<form action="register?type=1" method="post">
     제목 : <input type="text" name="title"><br>
     글쓴이 : <input type="text" name="author" value="<%=name%>"><br>
     비번 : <input type="password" name="pw">

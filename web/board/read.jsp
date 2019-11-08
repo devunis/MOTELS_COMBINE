@@ -1,5 +1,6 @@
 <%@ page import="model.board.BoardBean" %>
-<%@ page import="java.util.Date" %><%--
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: min
   Date: 19. 11. 8.
@@ -40,11 +41,15 @@
             <td>내용</td>
             <td>작성일자</td>
         </tr>
-        <% for (int i=0; i<10 ;i++) {%>
+        <%
+            ArrayList<BoardBean> reply = (ArrayList<BoardBean>) request.getAttribute("reply");
+            for (int i=0; i<reply.size() ;i++) {
+                BoardBean rep = reply.get(i);
+        %>
         <tr>
-            <td>한승민</td>
-            <td>123123</td>
-            <td><%=new Date()%></td>
+            <td><%=rep.getAuthor()%></td>
+            <td><%=rep.getContents()%></td>
+            <td><<%=rep.getDate()%>/td>
             <td><button onclick="href='#'">수정하기</button></td>
             <td><button onclick="href='#'">삭제하기</button></td>
         </tr>
@@ -52,22 +57,22 @@
     </table>
 
 
-    <form action="/register" method="post">
+    <form action="/register?type=2" method="post">
         <table border="1">
             <tr>
-                <td rowspan="3"><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                <td rowspan="3"><textarea name="contents" id="" cols="30" rows="10"></textarea></td>
                 <td><input type="submit" value="댓글달기"></td>
             </tr>
             <tr>
-                <td><input type="text" name="pw" value="<%=(String)session.getAttribute("name")%>"></td>
+                <td><input type="text" name="author" value="<%=(String)session.getAttribute("name")%>"></td>
             </tr>
             <tr>
                 <td><input type="password" name="pw" placeholder="비밀번호입력"></td>
-                <input type="hidden" name="no" value="<%=boardBean.getNo()%>">
+                <input type="hidden" name="ref" value="<%=boardBean.getNo()%>">
             </tr>
         </table>
     </form>
-<button>글 수정</button>
-<button>글 삭제</button>
+<button onclick="href='#'">글 수정</button>
+<button onclick="href='#'">글 삭제</button>
 </body>
 </html>
