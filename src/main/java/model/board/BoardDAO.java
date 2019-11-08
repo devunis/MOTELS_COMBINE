@@ -46,18 +46,6 @@ public class BoardDAO {
         return chk;
     }
 
-    //게시글 열람
-    public List<BoardBean> readBoard(int no) {
-        getConnection();
-        List<BoardBean> list = null;
-        try {
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
-
     // 게시글 개수 리턴
     public int boardCnt() {
         getConnection();
@@ -69,6 +57,7 @@ public class BoardDAO {
             if(rs.next()){
                 cnt = rs.getInt(1);
             }
+            conn.close();
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -137,5 +126,46 @@ public class BoardDAO {
             e.printStackTrace();
         }
         return bean;
+    }
+
+    //댓글작성
+    public void insertReply(BoardBean bean) {
+        getConnection();
+
+        try{
+            String sql = "insert into reply values(no,?,?,?,?,now())";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,bean.getRef());
+            pstmt.setString(2, bean.getAuthor());
+            pstmt.setString(3,bean.getPw());
+            pstmt.setString(4,bean.getContents());
+            pstmt.executeUpdate();
+            conn.close();
+        }catch (Exception e ){
+            e.printStackTrace();
+        }
+    }
+
+    // 해당 게시글에 맞는 댓글 리턴
+    public ArrayList<BoardBean> getReply(int no) {
+        ArrayList<BoardBean> reply = new ArrayList<>();
+        getConnection();
+        try{
+            String sql = "select * from reply where ref = ? order by no asc";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,no);
+            rs = pstmt.executeQuery();
+            while(rs.next()){
+                BoardBean bean = new BoardBean();
+                bean.setAuthor(rs.getString(3));
+                bean.setContents(rs.getString(5));
+                bean.setDate(rs.getString(6));
+                reply.add(bean);
+            }
+            conn.close();
+        }catch (Exception e ){
+            e.printStackTrace();
+        }
+        return reply;
     }
 }
