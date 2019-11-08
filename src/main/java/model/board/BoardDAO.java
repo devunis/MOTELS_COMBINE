@@ -105,4 +105,37 @@ public class BoardDAO {
 
         return boardBeanList;
     }
+
+    //세부 게시물 조회
+    public BoardBean getContents(int boardNo) {
+        BoardBean bean = new BoardBean();
+        getConnection();
+        try{
+            //조회수 증가
+            String sqlcnt = "update board set readcnt=readcnt+1 where no = ?";
+            pstmt = conn.prepareStatement(sqlcnt);
+            pstmt.setInt(1,boardNo);
+            pstmt.executeUpdate();
+
+            String sql = "select * from board where no = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,boardNo);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                bean.setNo(boardNo);
+                bean.setTitle((rs.getString(2)));
+                bean.setAuthor(rs.getString(3));
+                bean.setPw(rs.getString(4));
+                bean.setDate(rs.getString(5));
+                bean.setContents(rs.getString(6));
+                bean.setReadcnt(rs.getInt(7));
+                bean.setRef(rs.getInt(8));
+                bean.setRef_step(rs.getInt(9));
+            }
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return bean;
+    }
 }

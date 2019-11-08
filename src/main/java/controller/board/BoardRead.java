@@ -11,26 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/register")
-public class BoardRegister extends HttpServlet {
+@WebServlet("/board/read")
+public class BoardRead extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
+        doGet(req, resp);
     }
 
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
-    private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
+        int boardNo = Integer.parseInt(req.getParameter("no"));
         BoardDAO bdao = new BoardDAO();
-        BoardBean boardBean = new BoardBean();
-        boardBean.setTitle(req.getParameter("title"));
-        boardBean.setAuthor(req.getParameter("author"));
-        boardBean.setPw(req.getParameter("pw"));
-        boardBean.setContents(req.getParameter("contents"));
-        bdao.createBoard(boardBean);
-        resp.sendRedirect("index.jsp");
-
+        BoardBean bean = bdao.getContents(boardNo);
+        req.setAttribute("bean", bean);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp?main=/board/read.jsp");
+        dispatcher.forward(req,resp);
     }
 }
-
