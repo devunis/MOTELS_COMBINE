@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<p>Copyright of this site is owned by MOTELS COMBINE.</p>
+    <div class="container">
+        <p>Copyright of this site is owned by MOTELS COMBINE.</p>
+    </div>
 </body>
 </html>

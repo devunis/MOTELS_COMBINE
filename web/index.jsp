@@ -9,25 +9,22 @@
 <html>
   <head>
     <title>MOTELS COMBINE</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="assets/style/root.css?ver=1.0" />
   </head>
   <body>
-  <header>
-    <%
-      String main = request.getParameter("main");
-      if(main == null) main = "main.jsp";
-
-    %>
-
-
-
-
-  <jsp:include page="header.jsp" />
+    <header>
+      <%
+        String main = request.getParameter("main");
+        if(main == null) main = "main.jsp";
+      %>
+    <jsp:include page="header.jsp" />
     </header>
     <main>
       <jsp:include page="<%=main%>" />
     </main>
-  <footer>
-    <jsp:include page="footer.jsp" />
-  </footer>
+    <footer>
+      <jsp:include page="footer.jsp" />
+    </footer>
   </body>
 </html>
