@@ -10,15 +10,11 @@ import java.io.IOException;
 
 @WebServlet("/set.do")
 public class ProductSet extends HttpServlet{
-    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
         reqPro(req,resp);
     }
 
-    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
         reqPro(req,resp);
     }
     private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,5 +28,4 @@ public class ProductSet extends HttpServlet{
         RequestDispatcher dispatcher = req.getRequestDispatcher("/search");
         dispatcher.forward(req,resp);
     }
-
 }

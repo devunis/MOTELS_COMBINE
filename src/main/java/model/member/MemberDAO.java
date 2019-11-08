@@ -103,12 +103,13 @@ public class MemberDAO {
     public void updateMember(MemberBean mbean){
         getConnection();
         try{
-            String sql = "update member set name=?, pw=?, tel=?, location=?";
+            String sql = "update member set name=?, pw=?, tel=?, location=? where email=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1,mbean.getName());
             pstmt.setString(2,mbean.getPw());
             pstmt.setString(3,mbean.getTel());
             pstmt.setString(4,mbean.getLocation());
+            pstmt.setString(5,mbean.getEmail());
             pstmt.executeUpdate();
             conn.close();
 

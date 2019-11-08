@@ -49,13 +49,32 @@ public class BoardDAO {
     //게시글 열람
     public List<BoardBean> readBoard(int no) {
         getConnection();
-
+        List<BoardBean> list = null;
         try {
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return list;
     }
+
+    // 게시글 개수 리턴
+    public int boardCnt() {
+        getConnection();
+        int cnt = 0;
+        try{
+            String sql = "select count(*) from board";
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                cnt = rs.getInt(1);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cnt;
+    }
+
 
     //게시글 전체 조회(최신글순)
     public List<BoardBean> showAll() {
