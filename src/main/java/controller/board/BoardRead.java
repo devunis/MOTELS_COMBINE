@@ -23,6 +23,9 @@ public class BoardRead extends HttpServlet {
         int boardNo = Integer.parseInt(req.getParameter("no"));
         BoardDAO bdao = new BoardDAO();
         BoardBean bean = bdao.getContents(boardNo);
+
+
+
         req.setAttribute("bean", bean);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp?main=/board/read.jsp");
         dispatcher.forward(req,resp);

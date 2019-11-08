@@ -11,7 +11,7 @@
 %>
 <html>
 <body>
-    <table board="1">
+    <table border="1">
         <tr>
             <td>글번호</td>
             <td><%=boardBean.getNo()%></td>
@@ -25,11 +25,28 @@
             <td><%=boardBean.getDate()%></td>
         </tr>
         <tr>
-            <td>
+            <td colspan="4">
                 <%=boardBean.getContents()%>
             </td>
         </tr>
     </table>
+
+
+    <form action="">
+        <table border="1">
+            <tr>
+                <td rowspan="3"><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                <td><input type="submit" value="댓글달기"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="pw" value="<%=(String)session.getAttribute("name")%>"></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="pw" placeholder="비밀번호입력"></td>
+                <input type="hidden" name="no" value="<%=boardBean.getNo()%>">
+            </tr>
+        </table>
+    </form>
 <button>글 수정</button>
 <button>글 삭제</button>
 </body>
