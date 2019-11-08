@@ -34,7 +34,7 @@ public class BoardRead extends HttpServlet {
         req.setAttribute("reply", reply);
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp?main=/board/read.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=/board/read.jsp");
         dispatcher.forward(req,resp);
     }
 }
