@@ -29,3 +29,11 @@
         ref_step int         not null
     );
  
+    create table reply (
+        no int primary key auto_increment not null ,
+        ref int not null ,
+        author varchar(30) not null ,
+        pw varchar(30) not null ,
+        content varchar(300) not null,
+        date varchar(20) not null
+    );
