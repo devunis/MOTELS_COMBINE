@@ -21,7 +21,7 @@
 
 
     <div class="container">
-        <form action="#" method="post">
+        <form action="set.do" method="post">
             <h3>구경하러가기~</h3>
             <input type="date" name="start">~
             <input type="date" name="end">
