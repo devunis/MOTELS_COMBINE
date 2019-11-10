@@ -1,5 +1,5 @@
 #main-catch{
-    background-image: @url("../image/door.jpg");
+    background-color: black;
     padding: 50px 0px;
     display: flex;
 }

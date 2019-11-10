@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/register")
 public class BoardRegister extends HttpServlet {
@@ -24,12 +25,25 @@ public class BoardRegister extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         BoardDAO bdao = new BoardDAO();
         BoardBean boardBean = new BoardBean();
-        boardBean.setTitle(req.getParameter("title"));
-        boardBean.setAuthor(req.getParameter("author"));
-        boardBean.setPw(req.getParameter("pw"));
-        boardBean.setContents(req.getParameter("contents"));
-        bdao.createBoard(boardBean);
-        resp.sendRedirect("../index.jsp?");
+        if(req.getParameter("type").equals("1")){
+            boardBean.setTitle(req.getParameter("title"));
+            boardBean.setAuthor(req.getParameter("author"));
+            boardBean.setPw(req.getParameter("pw"));
+            boardBean.setContents(req.getParameter("contents"));
+            bdao.createBoard(boardBean);
+            resp.sendRedirect("index.jsp");
+        } else {
+            boardBean.setTitle(req.getParameter("title"));
+            boardBean.setRef(Integer.parseInt(req.getParameter("ref")));
+            boardBean.setAuthor(req.getParameter("author"));
+            boardBean.setContents(req.getParameter("contents"));
+            boardBean.setPw(req.getParameter("pw"));
+            bdao.insertReply(boardBean);
+            //PrintWriter out = resp.getWriter();
+            resp.sendRedirect("index.jsp");
+            //out.println("<script>history.go(-1)</script>");
+        }
+
 
 
     }

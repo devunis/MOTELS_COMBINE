@@ -15,7 +15,7 @@
     <section id="main-catch">
         <div class="container">
             <h2>좋은 모텔만 모아모아~</h2>
-            <img src="assets/image/door.jpg" srcset="assets/image/door@2x.jpg 2x, assets/image/door@3x.jpg 3x" />
+<%--            <img src="assets/image/door.jpg" srcset="assets/image/door@2x.jpg 2x, assets/image/door@3x.jpg 3x" />--%>
         </div>
     </section>
 
