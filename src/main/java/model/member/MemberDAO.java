@@ -113,8 +113,39 @@ public class MemberDAO {
             e.printStackTrace();
         }
     }
+    public String getMemberLoc(String email){
+        getConnection();
+        String location = null;
+        try {
+            String sql = "select location from member where email = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,email);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                location = rs.getString(1);
+            }
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return location;
+    }
 
-
-
-
+    public String getMemberTel(String email){
+        getConnection();
+        String tel = null;
+        try {
+            String sql = "select tel from member where email = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,email);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                tel = rs.getString(1);
+            }
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return tel;
+    }
 }
