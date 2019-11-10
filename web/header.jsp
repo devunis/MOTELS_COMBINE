@@ -24,12 +24,12 @@
     <ul>
         <% if (email != null ) {%>
         <li class="greeting"><%=name%>님 안녕하세요!</li>
-        <li><a href="/logout.do">로그아웃</a></li> <!--구현해야됨-->
+        <li><a href="logout.do">로그아웃</a></li> <!--구현해야됨-->
         <%} else{%>
         <li><a href="index.jsp?main=/user/login.jsp">로그인</a></li>
         <%}%>
         <li><a href="index.jsp?main=main.jsp">HOME</a></li>
-        <li><a href="/board">후기검색</a></li>
+        <li><a href="board">후기검색</a></li>
         <li><a href="">예약확인</a></li>
         <li><a href="index.jsp?main=/mypage/mypage.jsp">마이페이지</a></li>
     </ul>
