@@ -157,6 +157,7 @@ public class BoardDAO {
             rs = pstmt.executeQuery();
             while(rs.next()){
                 BoardBean bean = new BoardBean();
+                bean.setNo(rs.getInt(1));
                 bean.setAuthor(rs.getString(3));
                 bean.setContents(rs.getString(5));
                 bean.setDate(rs.getString(6));
@@ -167,5 +168,90 @@ public class BoardDAO {
             e.printStackTrace();
         }
         return reply;
+    }
+    //게시글  수정 삭제
+    public void updateBoard(int no, String content ,int type){
+        getConnection();
+        try{
+            String sql = "";
+            if (type == 1){
+                sql = "update board set contents = ? where no = ?";
+            }
+            else {
+                sql = "update reply set content = ? where no = ?";
+            }
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,content);
+            pstmt.setInt(2, no);
+            pstmt.executeUpdate();
+            System.out.println(no+"번 글 수정 완료");
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void deleteBoard(int no, int type){
+        getConnection();
+        try{
+            String sql = "";
+            if (type == 1){
+                sql = "delete from board where no = ?";
+            }
+            else {
+                sql = "delete from reply where no = ?";
+            }
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, no);
+            pstmt.executeUpdate();
+            System.out.println(no+"번 글/댓글 삭제 완료 ");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+    //게시글 삭제시 게시글 관련 댓글 삭제를 위한 ref값 리턴
+    public void deleteAllRefReply(int boardNo){
+        getConnection();
+        try{
+            String sql = "delete from reply where ref = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,boardNo);
+            pstmt.executeUpdate();
+            System.out.println(boardNo +"번 글 관련 댓글 삭제");
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    //게시글, 댓글 수정시 비밀번호 체크
+    public boolean checkPwd(int No, String pwd, int type){
+        boolean check = false;
+        getConnection();
+        try{
+            String sql = "";
+            if (type == 1){
+                sql = "select pw from board where no = ?";
+            }
+            else{
+                sql = "select pw from reply where no = ?";
+            }
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,No);
+            rs = pstmt.executeQuery();
+            if (rs.next()){
+                if (rs.getString(1).equals(pwd)){
+                    check = true;
+                    System.out.println("패스워드 같음");
+                }
+            }
+            conn.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return check;
     }
 }

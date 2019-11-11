@@ -48,9 +48,9 @@
         <tr>
             <td><%=rep.getAuthor()%></td>
             <td><%=rep.getContents()%></td>
-            <td><<%=rep.getDate()%>/td>
-            <td><button onclick="href='#'">수정하기</button></td>
-            <td><button onclick="href='#'">삭제하기</button></td>
+            <td><%=rep.getDate()%></td>
+            <td><button onclick="location.href='index.jsp?main=/board/replyUpdate.jsp&replyNo=<%=rep.getNo()%>'">수정하기</button></td>
+            <td><button onclick="location.href='index.jsp?main=/board/replyDelete.jsp&replyNo=<%=rep.getNo()%>'">삭제하기</button></td>
         </tr>
         <% } %>
     </table>
@@ -71,7 +71,7 @@
             </tr>
         </table>
     </form>
-<button onclick="href='#'">글 수정</button>
-<button onclick="href='#'">글 삭제</button>
+<button onclick="location.href='index.jsp?main=/board/boardUpdate.jsp&boardNo=<%=boardBean.getNo()%>'">글 수정</button>
+<button onclick="location.href='index.jsp?main=/board/boardDelete.jsp&boardNo=<%=boardBean.getNo()%>'">글 삭제</button>
 </body>
 </html>

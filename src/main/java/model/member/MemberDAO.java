@@ -113,6 +113,8 @@ public class MemberDAO {
             e.printStackTrace();
         }
     }
+
+    //mypage 정보를 위한
     public String getMemberLoc(String email){
         getConnection();
         String location = null;

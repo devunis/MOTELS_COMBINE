@@ -26,7 +26,7 @@
     }
 %>
 
-<h1>이메일 <%=email%>, 이름 <%=name%>, 사는곳 <%=location%>, 전화번호<%=tel%></h1>
+<h1>이메일 <%=email%>, 이름 <%=name%>, 사는곳 <%=location%>, 전화번호 <%=tel%></h1>
 <button onclick="location.href='index.jsp?main=/mypage/updateinfo.jsp'">회원수정</button>
 <button onclick="location.href='index.jsp?main=/mypage/deleteinfo.jsp'">회원탈퇴</button>
 
