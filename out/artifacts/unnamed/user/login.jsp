@@ -9,16 +9,25 @@
 <html>
 <head>
     <title>MOTELS COMBINE</title>
+    <link rel="stylesheet" href="/assets/style/login.css" />
 </head>
 <body>
-    <h1>로그인</h1>
-    <form action="/login.do" method="post">
-        <label for="email">이메일</label>
-        <input type="email" id="email" name="email" placeholder="이메일" />
-        <label for="pw">비밀번호</label>
-        <input type="password" id="pw" name="pw" />
-        <input type="submit" value="로그인">
-    </form>
-    <button onclick="location.href='index.jsp?main=/user/signup.jsp'">회원가입</button>
+    <section id="login">
+        <div class="container content-overlay-dark" style="margin-top: 20px;">
+            <h1 id="login-heading">로그인</h1>
+            <hr class="devider-white"/>
+            <form id="login-form" action="/login.do" method="post">
+                <div class="login-input-wrapper">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="이메일" />
+                    <label for="pw">비밀번호</label>
+                    <input type="password" id="pw" name="pw" />
+                </div>
+                <input type="submit" value="로그인">
+                <button onclick="location.href='index.jsp?main=/user/signup.jsp'">회원가입</button>
+            </form>
+        </div>
+    </section>
+
 </body>
 </html>

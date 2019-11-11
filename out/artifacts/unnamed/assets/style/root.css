@@ -1,5 +1,4 @@
 /* TOP COMPONENT */
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -64,8 +63,11 @@ header{
     width: fit-content;
     padding: 10px 40px;
     border-radius: 20px;
+    font-family: 'Noto Sans R', sans-serif;
+
 }
 
+/* 경계선 */
 
 .devider-white{
     border: 1px solid white;
@@ -77,5 +79,28 @@ header{
     border: 1px solid black;
     margin: 0px;
     width: 100%;
+}
+
+/* 오버레이 컨텐츠 */
+
+.content-overlay-dark{
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px 30px;
+}
+
+.content-overlay-white{
+    background-color: rgba(225,225,225,0.7);
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px 30px;
 }
 
