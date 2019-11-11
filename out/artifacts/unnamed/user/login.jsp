@@ -18,10 +18,14 @@
             <hr class="devider-white"/>
             <form id="login-form" action="/login.do" method="post">
                 <div class="login-input-wrapper">
-                    <label for="email">이메일</label>
-                    <input type="email" id="email" name="email" placeholder="이메일" />
-                    <label for="pw">비밀번호</label>
-                    <input type="password" id="pw" name="pw" />
+                    <div class="login-input-wrapper-inner">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" placeholder="이메일" />
+                    </div>
+                    <div class="login-input-wrapper-inner">
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" name="pw" />
+                    </div>
                 </div>
                 <input type="submit" value="로그인">
                 <button onclick="location.href='index.jsp?main=/user/signup.jsp'">회원가입</button>

@@ -31,7 +31,10 @@ form#login-form{
     margin: 20px 0px;
 }
 
+
+
 form#login-form label{
     font-family: 'Noto Sans R', sans-serif;
     font-size: 1.2rem;
+    
 }
