@@ -18,7 +18,7 @@
     <textarea name="content" id="content" cols="30" rows="10"></textarea>
     비밀번호를 입력하세요
     <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="삭제">
+    <input type="submit" value="수정">
 </form>
 </body>
 </html>

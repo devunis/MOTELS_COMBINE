@@ -114,7 +114,8 @@ public class MemberDAO {
         }
     }
 
-    //mypage 정보를 위한
+    //마이페이지 정보를 얻기 위한
+
     public String getMemberLoc(String email){
         getConnection();
         String location = null;
@@ -132,7 +133,6 @@ public class MemberDAO {
         }
         return location;
     }
-
     public String getMemberTel(String email){
         getConnection();
         String tel = null;
