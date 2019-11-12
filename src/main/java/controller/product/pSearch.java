@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -21,6 +22,8 @@ public class pSearch extends HttpServlet {
         doPost(req, resp);
     }
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+
         req.setCharacterEncoding("UTF-8");
         String checkIn = req.getParameter("start");
         String checkOut = req.getParameter("end");
@@ -30,6 +33,14 @@ public class pSearch extends HttpServlet {
         String rooms = req.getParameter("rooms");
         System.out.println(checkIn);
         System.out.println(checkOut);
+
+        session.setAttribute("checkIn",checkIn);
+        session.setAttribute("checkOut",checkOut);
+        session.setAttribute("loc",loc);
+        session.setAttribute("adults",adults);
+        session.setAttribute("kids",kids);
+        session.setAttribute("rooms",rooms);
+
 
         final AsyncContext asyncContext = req.startAsync(req,resp);
         final HttpServletRequest request = (HttpServletRequest) asyncContext.getRequest();
