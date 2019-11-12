@@ -9,47 +9,52 @@
 <%@ page import="controller.product.pInfo" %>
 <html>
 <head>
-    <meta charset="UTF-8s">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/style/pro.css?ver=1.0" />
 </head>
 <body>
-<table>
-    <h1>모텔 검색</h1>
-    <tr>
-        <td>이미지</td>
-        <td>모텔명</td>
-        <td>정보</td>
-        <td>가격</td>
-        <td></td>
-    </tr>
-<%
+<div class="container">
+    <header class="normal-header">
+        <h2 id="motel-search-heading">모텔 검색</h2>
+        <p>여러 곳의 모텔을 비교해 보세요!</p>
+    </header>
+    <%
     request.setCharacterEncoding("UTF-8");
     ArrayList<pInfo> plist = (ArrayList<pInfo> ) request.getAttribute("mlist");
     for (int i=0; i<plist.size(); i++) {
         pInfo p = plist.get(i);
-%>
+    %>
+    <div class="motel-card" data-aos="fade-left">
+        <div class="motel-card-header">
+            <div class="motel-image"><img src="<%=p.getImg()%>" alt="<%=p.getName()%>"></div>
+            <span class="motel-name"><%=p.getName()%></span>
+        </div>
+        <div class="motel-card-info">
+            <div class="motel-info">
+                <h3><%=p.getName()%></h3>
+                <p><%=p.getInfo()%></p>
+            </div>
+            <div class="motel-price-reserve">
+                <span class="motel-price"><%=p.getPrice()%></span>
+                <form action="booking.do" method="post">
+                    <input type="hidden" name="checkIn" value="<%=request.getParameter("start")%>">
+                    <input type="hidden" name="checkOut" value="<%=request.getParameter("end")%>">
+                    <input type="hidden" name="adults" value="<%=request.getParameter("adults")%>">
+                    <input type="hidden" name="kids" value="<%=request.getParameter("kids")%>">
+                    <input type="hidden" name="rooms" value="<%=request.getParameter("rooms")%>">
+                    <input type="hidden" name="img" value="<%=p.getImg()%>">
+                    <input type="hidden" name="name" value="<%=p.getName()%>">
+                    <input type="hidden" name="info" value="<%=p.getInfo()%>">
+                    <input type="hidden" name="price" value="<%=p.getPrice()%>">
+                    <button class="btn-primary" type=margin: 10px 0px 0px 10px;"submit">예약하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
- <tr>
-     <td><img src="<%=p.getImg()%>" alt=""></td>
-     <td><%=p.getName()%></td>
-     <td><%=p.getInfo()%></td>
-     <td><%=p.getPrice()%></td>
-
-     <form action="booking.do" method="post">
-         <input type="hidden" name="checkIn" value="<%=request.getParameter("start")%>">
-         <input type="hidden" name="checkOut" value="<%=request.getParameter("end")%>">
-         <input type="hidden" name="adults" value="<%=request.getParameter("adults")%>">
-         <input type="hidden" name="kids" value="<%=request.getParameter("kids")%>">
-         <input type="hidden" name="rooms" value="<%=request.getParameter("rooms")%>">
-         <input type="hidden" name="img" value="<%=p.getImg()%>">
-         <input type="hidden" name="name" value="<%=p.getName()%>">
-         <input type="hidden" name="info" value="<%=p.getInfo()%>">
-         <input type="hidden" name="price" value="<%=p.getPrice()%>">
-         <td><button type="submit">예약하기</button></td>
-     </form>
-
- </tr>
     <%}%>
-</table>
+    </div>
+
 
 <jsp:include page="pcon.jsp" />
 </body>

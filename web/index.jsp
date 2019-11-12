@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/style/root.css?ver=1.0" />
   </head>
   <body>
-    <header>
+    <header class="navbar">
       <%
         String main = request.getParameter("main");
         if(main == null) main = "main.jsp";
