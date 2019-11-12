@@ -16,9 +16,9 @@
         <div class="container">
             <div class="content-overlay-dark" data-aos="fade-down" data-aos-duration="900">
                 <h2>좋은 모텔만 모아모아~</h2>
-                <p>모텔만을 위한 서비스, 모텔스컴바인을 이용하시려면?</p>
+                <p>모텔만을 위한 서비스, 모텔스컴바인을 이용해보세요.</p>
                 <hr class="devider-white"/>
-                <button class="btn-primary align-right" style="margin-top: 20px;">로그인</button>
+                <button class="btn-primary align-center" style="margin-top: 20px;" onclick="location.href='#main-search'">모텔 알아보기</button>
             </div>
         </div>
     </section>
@@ -27,16 +27,16 @@
         <div class="container">
             <div class="content-overlay-white" data-aos="fade-down" data-aos-duration="900" data-aos-delay="300">
                 <h3>여행 일정이 어떻게 되시나요?</h3>
-                <hr class="devider-black"/>
+                <hr class="devider-black mb-1"/>
                 <form action="psearch" method="post">
-                    <div class="date-wrapper">
+                    <div class="row-wrapper">
                         <label for="start">체크인</label>
                         <input type="date" id="start" name="start">
                         <label for="end">체크아웃</label>
                         <input type="date" id="end" name="end">
                     </div>
-                    <hr class="devider-black" style="margin-top: 20px;"/>
-                    <div class="input-wrapper">
+                    <hr class="devider-black my-1"/>
+                    <div class="col-wrapper">
                         <label for="location">서울 어디에서 묵으실 예정이신가요?</label>
                         <select name="loc" id="location">
                             <option value="강남구">강남구</option>
@@ -66,13 +66,16 @@
                             <option value="중랑구">중랑구</option>
                         </select>
                     </div>
-                    <div class="input-wrapper">
-                        성인 : <input type="text" name="adults" placeholder="성인 수">
-                        아동 : <input type="text" name="kids" placeholder="아동 수">
-                        객실 : <input type="text" name="rooms" placeholder="객실 수">
+                    <hr class="devider-black my-1"/>
+                    <div class="col-wrapper">
+                        <span id="type-label" class="mb-1">투숙 인원과 객실은 어떻게 되시나요?</span>
+                        <div class="row-wrapper">
+                            <label for="adults">성인 수</label> <input type="number" min="0" id="adults" name="adults" placeholder="성인 수">
+                            <label for="kids">아동 수</label> <input type="number" min="0" id="kids" name="kids" placeholder="아동 수">
+                            <label for="rooms">객실 수</label> <input type="number" min="0" id="rooms" name="rooms" placeholder="객실 수">
                     </div>
-                    <hr class="devider-black" style="margin-top: 15px;"/>
-                    <input id="main-search-btn" class="btn-primary" style="margin-top: 20px;" type="submit" value="검색하기">
+                    <hr class="devider-black mt-1"/>
+                    <input id="main-search-btn" class="btn-primary align-right" style="margin-top: 20px;" type="submit" value="검색하기">
                 </form>
             </div>
         </div>

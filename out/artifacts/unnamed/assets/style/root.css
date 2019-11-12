@@ -7,7 +7,21 @@
 
 html{
     font-size: 13px;
+    scroll-behavior: smooth;
 }
+
+@media (max-width: 1024px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    html{
+        font-size: 11px;
+    }
+}
+
 body{
     margin: 0px;
 }
@@ -55,6 +69,11 @@ header{
     margin-right: 0px;
 }
 
+.align-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* 버튼 */
 .btn-primary{
     background-color: #89CFF0;
@@ -64,7 +83,12 @@ header{
     padding: 10px 40px;
     border-radius: 20px;
     font-family: 'Noto Sans R', sans-serif;
+}
 
+@media (max-width: 769px) {
+    .btn-primary{
+        padding: 6px 24px;
+    }
 }
 
 /* 경계선 */
@@ -79,6 +103,33 @@ header{
     border: 1px solid black;
     margin: 0px;
     width: 100%;
+}
+
+/* 상하단 여백 */
+.my-1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.my-2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mt-1{
+    margin-top: 10px;
+}
+
+.mt-2{
+    margin-top: 20px;
+}
+
+.mb-1{
+    margin-bottom: 10px;
+}
+
+.mb-2{
+    margin-bottom: 20px;
 }
 
 /* 오버레이 컨텐츠 */
@@ -104,3 +155,8 @@ header{
     padding: 20px 30px;
 }
 
+@media (max-width: 769px) {
+    .content-overlay-white, .content-overlay-dark{
+        padding: 20px 10px;
+    }
+}
