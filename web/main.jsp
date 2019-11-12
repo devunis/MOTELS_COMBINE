@@ -22,13 +22,13 @@
             </div>
         </div>
     </section>
-    
+
     <section id="main-search">
         <div class="container">
             <div class="content-overlay-white" data-aos="fade-down" data-aos-duration="900" data-aos-delay="300">
                 <h3>여행 일정이 어떻게 되시나요?</h3>
                 <hr class="devider-black"/>
-                <form action="set.do" method="post">
+                <form action="psearch" method="post">
                     <div class="date-wrapper">
                         <label for="start">체크인</label>
                         <input type="date" id="start" name="start">
