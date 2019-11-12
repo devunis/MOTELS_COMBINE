@@ -59,7 +59,5 @@
             <input type="submit" value="검색하기">
         </form>
     </div>
-
-    <a href="/psearch">test</a>
 </body>
 </html>
