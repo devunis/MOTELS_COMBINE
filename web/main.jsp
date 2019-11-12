@@ -5,7 +5,7 @@
   Time: 오후 5:11
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
     <link rel="stylesheet" href="assets/style/main.css?ver=1.0" />
@@ -21,7 +21,7 @@
 
 
     <div class="container">
-        <form action="set.do" method="post">
+        <form action="/psearch" method="post">
             <h3>구경하러가기~</h3>
             <input type="date" name="start">~
             <input type="date" name="end">
@@ -52,9 +52,12 @@
                 <option value="중구">중구</option>
                 <option value="중랑구">중랑구</option>
             </select>
+            성인 : <input type="text" name="adults" placeholder="성인 수">
+            아동 : <input type="text" name="kids" placeholder="아동 수">
+            객실 : <input type="text" name="rooms" placeholder="객실 수">
+            </select>
             <input type="submit" value="검색하기">
         </form>
     </div>
-
 </body>
 </html>

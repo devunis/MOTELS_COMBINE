@@ -26,7 +26,7 @@ public class MemberLogin extends HttpServlet {
     }
 
     private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("euc-kr");
+        req.setCharacterEncoding("UTF-8");
 
 
         MemberDAO mdao = new MemberDAO();

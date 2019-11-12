@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="commons-collections4-4.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tomcat9/lib/commons-collections4-4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tomcat9/lib/commons-dbcp-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tomcat9/lib/commons-pool2-2.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
