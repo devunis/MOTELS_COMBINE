@@ -13,8 +13,6 @@
     background-attachment: fixed;
 }
 
-
-
 #main-catch h2{
     font-size: 2.5rem;
     color: white;
@@ -31,7 +29,6 @@
     font-family: 'Noto Sans T', sans-serif;
     font-weight: bold;
 }
-
 
 #main-search{
     height: 100vh;
@@ -66,30 +63,8 @@
     padding: 10px 0px;
 }
 
-.row-wrapper{
-    /*margin-top: 20px;*/
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-}
-
-.col-wrapper{
-    /*margin-top: 20px;*/
-    display: flex;
-    flex-direction: column;
-    /*align-items: center;*/
-    justify-content: space-around;
-    flex-wrap: nowrap;
-}
 
 #start, #end{
-    border: none;
-    padding: 8px;
-    border-radius: 16px;
-    font-size: 1rem;
-    background-color: white;
     flex-grow: 2;
 }
 
@@ -111,7 +86,6 @@
 }
 
 
-
 #location{
     display: block;
     width: 100%;
@@ -127,8 +101,6 @@ label[for="start"],label[for="end"], label[for="location"], label[for="adults"],
     font-weight: bold;
     flex-grow: 1;
 }
-
-
 
 
 label[for="location"] {
@@ -169,10 +141,6 @@ label[for="location"] {
 }
 
 @media (max-width: 425px) {
-    .row-wrapper{
-        flex-wrap: wrap !important;
-    }
-
     #main-catch h2, #main-search h3 {
         font-size: 2rem;
         letter-spacing: -0.13rem;

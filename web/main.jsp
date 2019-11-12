@@ -31,9 +31,9 @@
                 <form action="psearch" method="post">
                     <div class="row-wrapper">
                         <label for="start">체크인</label>
-                        <input type="date" id="start" name="start">
+                        <input class="input-primary" type="date" id="start" name="start">
                         <label for="end">체크아웃</label>
-                        <input type="date" id="end" name="end">
+                        <input class="input-primary" type="date" id="end" name="end">
                     </div>
                     <hr class="devider-black my-1"/>
                     <div class="col-wrapper">

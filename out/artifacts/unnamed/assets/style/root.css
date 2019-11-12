@@ -63,6 +63,40 @@ header{
     }
 }
 
+/* 플렉스 랩퍼 */
+
+.row-wrapper, .col-m-wrapper{
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+}
+
+.col-wrapper, .row-m-wrapper{
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: nowrap;
+}
+
+@media (max-width: 769px) {
+    .col-m-wrapper{
+        display: flex;
+        flex-direction: column !important;
+        flex-wrap: nowrap;
+    }
+
+    .row-m-wrapper{
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 425px) {
+    .row-wrapper{
+        flex-wrap: wrap !important;
+    }
+}
+
 /* 정렬 */
 .align-right{
     margin-left: auto;
@@ -72,6 +106,15 @@ header{
 .align-center{
     margin-left: auto;
     margin-right: auto;
+}
+
+/* 폼 */
+.input-primary{
+    border: none;
+    padding: 8px;
+    border-radius: 16px;
+    font-size: 1rem;
+    background-color: white;
 }
 
 /* 버튼 */
@@ -142,6 +185,8 @@ header{
     flex-direction: column;
     box-sizing: border-box;
     padding: 20px 30px;
+
+    color: white !important;
 }
 
 .content-overlay-white{
