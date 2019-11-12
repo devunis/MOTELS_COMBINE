@@ -1,10 +1,12 @@
 /* TOP COMPONENT */
-
-html{
-    font-size: 13px;
+* {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+html{
+    font-size: 13px;
 }
 body{
     margin: 0px;
@@ -45,5 +47,60 @@ header{
     .container {
         max-width: 1140px;
     }
+}
+
+/* 정렬 */
+.align-right{
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+/* 버튼 */
+.btn-primary{
+    background-color: #89CFF0;
+    border: none;
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 40px;
+    border-radius: 20px;
+    font-family: 'Noto Sans R', sans-serif;
+
+}
+
+/* 경계선 */
+
+.devider-white{
+    border: 1px solid white;
+    margin: 0px;
+    width: 100%;
+}
+
+.devider-black{
+    border: 1px solid black;
+    margin: 0px;
+    width: 100%;
+}
+
+/* 오버레이 컨텐츠 */
+
+.content-overlay-dark{
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px 30px;
+}
+
+.content-overlay-white{
+    background-color: rgba(225,225,225,0.7);
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px 30px;
 }
 
