@@ -21,17 +21,20 @@ public class BookingMain extends HttpServlet {
         BookingBean bbean = new BookingBean();
         bbean.setMotel(req.getParameter("pName"));
         bbean.setPrice(req.getParameter("pPrice"));
+        System.out.println(bbean.getMotel());
+        System.out.println(bbean.getPrice());
 
 
         HttpSession session = req.getSession();
         try {
-            bbean.setName((String)session.getAttribute("name"));
-            bbean.setCheckin((String)session.getAttribute("checkIn"));
-            bbean.setCheckout((String)session.getAttribute("checkOut"));
-            bbean.setLoc((String)session.getAttribute("loc"));
-//            bbean.setAdults((int)session.getAttribute("adults"));
-//            bbean.setKids((int)session.getAttribute("kids"));
-//            bbean.setRooms((int)session.getAttribute("rooms"));
+//            bbean.setName((String)session.getAttribute("name"));
+//            bbean.setCheckin((String)session.getAttribute("checkIn"));
+//            bbean.setCheckout((String)session.getAttribute("checkOut"));
+//            bbean.setLoc((String)session.getAttribute("loc"));
+//            bbean.setAdults((String)session.getAttribute("adults"));
+//            bbean.setKids((String)session.getAttribute("kids"));
+//            bbean.setRooms((String)session.getAttribute("rooms"));
+
         }catch (Exception e){
             System.out.println("세션에서 불러오기 실패");
         }

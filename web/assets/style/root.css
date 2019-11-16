@@ -7,7 +7,21 @@
 
 html{
     font-size: 13px;
+    scroll-behavior: smooth;
 }
+
+@media (max-width: 1024px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    html{
+        font-size: 11px;
+    }
+}
+
 body{
     margin: 0px;
 }
@@ -49,10 +63,58 @@ header{
     }
 }
 
+/* 플렉스 랩퍼 */
+
+.row-wrapper, .col-m-wrapper{
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+}
+
+.col-wrapper, .row-m-wrapper{
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: nowrap;
+}
+
+@media (max-width: 769px) {
+    .col-m-wrapper{
+        display: flex;
+        flex-direction: column !important;
+        flex-wrap: nowrap;
+    }
+
+    .row-m-wrapper{
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 425px) {
+    .row-wrapper{
+        flex-wrap: wrap !important;
+    }
+}
+
 /* 정렬 */
 .align-right{
     margin-left: auto;
     margin-right: 0px;
+}
+
+.align-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 폼 */
+.input-primary{
+    border: none;
+    padding: 8px;
+    border-radius: 16px;
+    font-size: 1rem;
+    background-color: white;
 }
 
 /* 버튼 */
@@ -64,7 +126,12 @@ header{
     padding: 10px 40px;
     border-radius: 20px;
     font-family: 'Noto Sans R', sans-serif;
+}
 
+@media (max-width: 769px) {
+    .btn-primary{
+        padding: 6px 24px;
+    }
 }
 
 /* 경계선 */
@@ -81,6 +148,33 @@ header{
     width: 100%;
 }
 
+/* 상하단 여백 */
+.my-1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.my-2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mt-1{
+    margin-top: 10px;
+}
+
+.mt-2{
+    margin-top: 20px;
+}
+
+.mb-1{
+    margin-bottom: 10px;
+}
+
+.mb-2{
+    margin-bottom: 20px;
+}
+
 /* 오버레이 컨텐츠 */
 
 .content-overlay-dark{
@@ -91,6 +185,8 @@ header{
     flex-direction: column;
     box-sizing: border-box;
     padding: 20px 30px;
+
+    color: white !important;
 }
 
 .content-overlay-white{
@@ -104,3 +200,8 @@ header{
     padding: 20px 30px;
 }
 
+@media (max-width: 769px) {
+    .content-overlay-white, .content-overlay-dark{
+        padding: 20px 10px;
+    }
+}

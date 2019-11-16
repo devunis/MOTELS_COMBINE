@@ -1,6 +1,6 @@
 package controller.product;
 
-//import jdk.jshell.execution.JdiDefaultExecutionControl;
+
 import model.board.BoardBean;
 import model.board.BoardDAO;
 import org.jsoup.Jsoup;
@@ -31,15 +31,22 @@ public class pSearch extends HttpServlet {
         String adults = req.getParameter("adults");
         String kids = req.getParameter("kids");
         String rooms = req.getParameter("rooms");
+
+
         System.out.println(checkIn);
         System.out.println(checkOut);
+        System.out.println(loc);
+        System.out.println(adults);
+        System.out.println(kids);
+        System.out.println(rooms);
 
-        session.setAttribute("checkIn",checkIn);
-        session.setAttribute("checkOut",checkOut);
-        session.setAttribute("loc",loc);
-        session.setAttribute("adults",adults);
-        session.setAttribute("kids",kids);
-        session.setAttribute("rooms",rooms);
+//        session.setAttribute("checkIn",checkIn);
+//        session.setAttribute("checkOut",checkOut);
+//        session.setAttribute("loc",loc);
+//        session.setAttribute("adults",adults);
+//        session.setAttribute("kids",kids);
+//        session.setAttribute("rooms",rooms);
+
 
 
         final AsyncContext asyncContext = req.startAsync(req,resp);

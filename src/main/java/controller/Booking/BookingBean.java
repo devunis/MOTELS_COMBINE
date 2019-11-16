@@ -20,13 +20,6 @@ public class BookingBean {
         this.loc = loc;
     }
 
-    public int getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(int rooms) {
-        this.rooms = rooms;
-    }
 
     public String getMotel() {
         return motel;
@@ -83,6 +76,15 @@ public class BookingBean {
     public void setKids(int kids) {
         this.kids = kids;
     }
+
+    public int getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(int rooms) {
+        this.rooms = rooms;
+    }
+
     @Override
     public String toString() {
         String msg = "이름 " + motel +

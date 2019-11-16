@@ -10,6 +10,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="annotations-api" />
           <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.12.1" />
+          <element id="library" level="project" name="jsoup-1.12.1" />
         </element>
       </element>
     </root>
