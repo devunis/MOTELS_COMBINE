@@ -40,12 +40,12 @@ public class pSearch extends HttpServlet {
         System.out.println(kids);
         System.out.println(rooms);
 
-//        session.setAttribute("checkIn",checkIn);
-//        session.setAttribute("checkOut",checkOut);
-//        session.setAttribute("loc",loc);
-//        session.setAttribute("adults",adults);
-//        session.setAttribute("kids",kids);
-//        session.setAttribute("rooms",rooms);
+        session.setAttribute("checkIn",checkIn);
+        session.setAttribute("checkOut",checkOut);
+        session.setAttribute("loc",loc);
+        session.setAttribute("adults",adults);
+        session.setAttribute("kids",kids);
+        session.setAttribute("rooms",rooms);
 
 
 

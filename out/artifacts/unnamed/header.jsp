@@ -30,7 +30,7 @@
         <%}%>
         <li><a href="index.jsp?main=main.jsp">HOME</a></li>
         <li><a href="board">후기검색</a></li>
-        <li><a href="">예약확인</a></li>
+        <li><a href="booking">예약확인</a></li>
         <li><a href="index.jsp?main=/mypage/mypage.jsp">마이페이지</a></li>
     </ul>
     <%

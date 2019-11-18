@@ -21,7 +21,7 @@
      <td><img src="<%=p.getImg()%>" alt=""></td>
      <td><%=p.getName()%></td>
      <td><%=p.getPrice()%></td>
-     <td><button onclick="location.href='booking?pName=<%=p.getName()%>&pPrice=<%=p.getPrice()%>'">예약하기</button></td>
+     <td><button onclick="location.href='booking.do?pName=<%=p.getName()%>&pPrice=<%=p.getPrice()%>'">예약하기</button></td>
  </tr>
 <% } %>
 </table>
