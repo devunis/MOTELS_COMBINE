@@ -31,7 +31,7 @@ public class BoardRegister extends HttpServlet {
             boardBean.setPw(req.getParameter("pw"));
             boardBean.setContents(req.getParameter("contents"));
             bdao.createBoard(boardBean);
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("index.jsp?main=/board/boardmain.jsp");
         } else {
             boardBean.setTitle(req.getParameter("title"));
             boardBean.setRef(Integer.parseInt(req.getParameter("ref")));
@@ -40,7 +40,7 @@ public class BoardRegister extends HttpServlet {
             boardBean.setPw(req.getParameter("pw"));
             bdao.insertReply(boardBean);
             //PrintWriter out = resp.getWriter();
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("index.jsp?main=/board/boardmain.jsp");
             //out.println("<script>history.go(-1)</script>");
         }
 

@@ -70,6 +70,7 @@
     </tr>
 </table>
 <button onclick="location.href='index.jsp?main=/booking/bookingcancel.jsp?no=<%=no%>'">예약 취소</button>
+<button onclick="location.href='#'">전화하기</button>
 <button onclick="history.back()">뒤로가기</button>
 </body>
 </html>

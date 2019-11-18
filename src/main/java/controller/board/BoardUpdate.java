@@ -29,7 +29,7 @@ public class BoardUpdate extends HttpServlet {
             int boardNo = Integer.parseInt(req.getParameter("boardNo"));
             if(bdao.checkPwd(boardNo, pwd,1)){
                 bdao.updateBoard(boardNo, content,1);
-                resp.sendRedirect("../index.jsp");
+                resp.sendRedirect("index.jsp?main=/board/boardmain.jsp");
             }
             else{
                 resp.sendRedirect("Error.jsp");

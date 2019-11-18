@@ -28,7 +28,7 @@ public class BoardDelete extends HttpServlet {
             if (bdao.checkPwd(boardNo, inputpwd,1)) {
                 bdao.deleteBoard(boardNo,1);
                 bdao.deleteAllRefReply(boardNo);
-                resp.sendRedirect("../index.jsp?");
+                resp.sendRedirect("index.jsp?main=/board/boardmain.jsp");
             } else {
                 resp.sendRedirect("Error.jsp");
             }
