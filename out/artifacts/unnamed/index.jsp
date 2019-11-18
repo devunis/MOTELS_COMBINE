@@ -10,6 +10,7 @@
   <head>
     <title>MOTELS COMBINE</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/aos/aos.css" />
     <link rel="stylesheet" href="assets/style/font.css" />
     <link rel="stylesheet" href="assets/style/root.css?ver=1.0" />

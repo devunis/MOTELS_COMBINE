@@ -8,20 +8,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="controller.product.pInfo" %>
 <html>
+<head>
+    <meta charset="UTF-8s">
+</head>
 <body>
 <table>
 
 <%
-    request.setCharacterEncoding("utf-8");
+    request.setCharacterEncoding("UTF-8");
     ArrayList<pInfo> plist = (ArrayList<pInfo> ) request.getAttribute("mlist");
     for (int i=0; i<plist.size(); i++) {
         pInfo p = plist.get(i);
 %>
  <tr>
-     <td><img src="<%=p.getImg()%>" alt=""></td>
+     <td><img src="<%=p.getImg()%>"></td>
      <td><%=p.getName()%></td>
+     <td><%=p.getInfo()%></td>
      <td><%=p.getPrice()%></td>
-     <td><button>예약하기</button></td>
+     <td><button onclick="location.href='index.jsp?main=reserve.jsp'">예약하기</button></td>
  </tr>
 <% } %>
 </table>
