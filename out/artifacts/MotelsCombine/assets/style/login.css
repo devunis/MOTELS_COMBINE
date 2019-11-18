@@ -1,0 +1,51 @@
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 90vh;
+
+    background-image: url("../../assets/image/login_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-attachment: fixed;
+}
+
+article#login-form-article, article#signup-form-article{
+    flex-grow: 1;
+    align-items: center;
+}
+
+#signup-form-article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2#login-heading, h2#signup-heading{
+    font-family: 'Noto Sans B', sans-serif;
+    font-weight: normal;
+    color: white;
+    font-size: 2.25rem;
+    margin: 0px;
+    letter-spacing: -0.13rem;
+}
+
+form#login-form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form#login-form label{
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.2rem;
+    flex-basis: 30%;
+}
+
+#email, #pw{
+    flex-basis: 70%;
+}
+
+

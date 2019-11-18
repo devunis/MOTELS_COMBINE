@@ -48,7 +48,9 @@
      </form>
 
  </tr>
-<% } %>
+    <%}%>
 </table>
+
+<jsp:include page="pcon.jsp" />
 </body>
 </html>
