@@ -39,3 +39,20 @@
         content varchar(300) not null,
         date varchar(20) not null
     );
+    
+    create table booking
+    (
+        no           int auto_increment
+            primary key,
+        img          text        null,
+        name         varchar(30) null,
+        info         varchar(30) null,
+        price        varchar(30) null,
+        checkin      varchar(30) null,
+        checkout     varchar(30) null,
+        adults       int         null,
+        kids         int         null,
+        rooms        int         null,
+        id           varchar(30) null,
+        reserve_date varchar(30) null
+    );

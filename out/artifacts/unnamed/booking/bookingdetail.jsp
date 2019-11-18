@@ -21,33 +21,57 @@
 <table>
     <tr>
         <td>예약번호</td>
-        <td>이미지</td>
-        <td>모텔명</td>
-        <td>정보</td>
-        <td>가격</td>
-        <td>체크인</td>
-        <td>체크아웃</td>
-        <td>성인</td>
-        <td>아동</td>
-        <td>방</td>
-        <td>예약자 아이디</td>
-        <td>예약날짜</td>
+        <td><%=no%></td>
     </tr>
     <tr>
-        <td><%=bean.getNo()%></td>
+        <td>이미지</td>
         <td><img src="<%=bean.getImg()%>" alt=""></td>
+    </tr>
+    <tr>
+        <td>모텔명</td>
         <td><%=bean.getName()%></td>
+    </tr>
+    <tr>
+        <td>정보</td>
         <td><%=bean.getInfo()%></td>
+    </tr>
+    <tr>
+        <td>가격</td>
         <td><%=bean.getPrice()%></td>
+    </tr>
+    <tr>
+        <td>체크인</td>
         <td><%=bean.getCheckin()%></td>
+    </tr>
+    <tr>
+        <td>체크아웃</td>
         <td><%=bean.getCheckout()%></td>
+    </tr>
+    <tr>
+        <td>성인</td>
         <td><%=bean.getAdults()%></td>
+    </tr>
+    <tr>
+        <td>아동</td>
         <td><%=bean.getKids()%></td>
+    </tr>
+    <tr>
+        <td>방</td>
         <td><%=bean.getRooms()%></td>
+    </tr>
+    <tr>
+        <td>예약자 아이디</td>
         <td><%=bean.getId()%></td>
+    </tr>
+
+    <tr>
+        <td>예약날짜</td>
         <td><%=bean.getReserveDate()%></td>
     </tr>
-    <button onclick="history.back()"></button>
+
+    <button onclick="history.back()">뒤로가기</button>
+
+
 
 
 </table>

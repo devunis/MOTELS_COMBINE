@@ -30,7 +30,7 @@
 
 <table>
 <tr>
-    <td>이미</td>
+    <td>이미지</td>
     <td>모텔명</td>
     <td>정보</td>
     <td>체크인</td>

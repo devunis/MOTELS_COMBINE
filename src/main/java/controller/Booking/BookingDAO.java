@@ -77,16 +77,17 @@ public class BookingDAO {
         }
         return beans;
     }
+
     public BookingBean getBooking(int no){
 
         getConnection();
         BookingBean bean = new BookingBean();
         try{
-            String sql = "select * from booking where id = ?";
+            String sql = "select * from booking where no = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1,no);
             rs = pstmt.executeQuery();
-            while (rs.next()){
+            if (rs.next()){
 
                 bean.setNo(rs.getInt(1));
                 bean.setImg(rs.getString(2));
@@ -101,6 +102,7 @@ public class BookingDAO {
                 bean.setId(rs.getString(11));
                 bean.setReserveDate(rs.getString(12));
             }
+            System.out.println(bean);
             conn.close();
 
         }catch (Exception e){
