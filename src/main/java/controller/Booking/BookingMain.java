@@ -17,8 +17,8 @@ public class BookingMain extends HttpServlet {
         HttpSession session = req.getSession();
         String email = (String)session.getAttribute("email");
         BookingDAO bdao = new BookingDAO();
-        ArrayList<BookingBean> bbean = bdao.getBooking(email);
-        req.setAttribute("bbean", bbean);
+        ArrayList<BookingBean> beans = bdao.getBooking(email);
+        req.setAttribute("beans", beans);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=/booking/bookingmain.jsp");
         dispatcher.forward(req,resp);

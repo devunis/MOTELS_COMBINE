@@ -1,17 +1,21 @@
 package controller.Booking;
 
 public class BookingBean {
-    int no;
-    String motel;
-    String loc;
-    String name;
-    String checkin;
-    String checkout;
-    String price;
-    int adults;
-    int kids;
-    int rooms;
-    String email;
+    private int no;
+    private String img;
+    private String name;
+    private String info;
+    private String price;
+    private String checkin;
+    private String checkout;
+    private String reserveDate;
+    private int adults;
+    private int kids;
+    private int rooms;
+
+
+
+    private String id;
 
     public int getNo() {
         return no;
@@ -21,29 +25,12 @@ public class BookingBean {
         this.no = no;
     }
 
-    public String getEmail() {
-        return email;
+    public String getImg() {
+        return img;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getLoc() {
-        return loc;
-    }
-
-    public void setLoc(String loc) {
-        this.loc = loc;
-    }
-
-
-    public String getMotel() {
-        return motel;
-    }
-
-    public void setMotel(String motel) {
-        this.motel = motel;
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getName() {
@@ -52,6 +39,22 @@ public class BookingBean {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getCheckin() {
@@ -70,12 +73,12 @@ public class BookingBean {
         this.checkout = checkout;
     }
 
-    public String getPrice() {
-        return price;
+    public String getReserveDate() {
+        return reserveDate;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setReserveDate(String reserveDate) {
+        this.reserveDate = reserveDate;
     }
 
     public int getAdults() {
@@ -101,19 +104,29 @@ public class BookingBean {
     public void setRooms(int rooms) {
         this.rooms = rooms;
     }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {
-        String msg = "이름 " + motel +
-                " 위치 : " + loc + 
-                " 예약자 : " + name +
-                " 체크인 : " + checkin +
-                " 체크아웃 : " + checkout +
-                " 가격 : " + price +
-                " 어른 : " + adults +
-                " 아동 : " + kids +
-                " 방 : " + rooms;
-        return msg;
-
+        return "BookingBean{" +
+                "no=" + no +
+                ", img='" + img + '\'' +
+                ", name='" + name + '\'' +
+                ", info='" + info + '\'' +
+                ", price='" + price + '\'' +
+                ", checkin='" + checkin + '\'' +
+                ", checkout='" + checkout + '\'' +
+                ", reserveDate='" + reserveDate + '\'' +
+                ", adults=" + adults +
+                ", kids=" + kids +
+                ", rooms=" + rooms +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

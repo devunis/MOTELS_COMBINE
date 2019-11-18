@@ -24,57 +24,89 @@ public class BookingDAO {
         }
     }
 
-    public void insertBooking(BookingBean bbean){
+    public void insertBooking(BookingBean bean){
         getConnection();
         try{
-
-            String sql = "insert into booking values(no,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into booking values(no,?,?,?,?,?,?,?,?,?,?,now())";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1,bbean.getMotel());
-            pstmt.setString(2,bbean.getLoc());
-            pstmt.setString(3,bbean.getName());
-            pstmt.setString(4,bbean.getCheckin());
-            pstmt.setString(5,bbean.getCheckout());
-            pstmt.setString(6,bbean.getPrice());
-            pstmt.setInt(7,bbean.getAdults());
-            pstmt.setInt(8,bbean.getKids());
-            pstmt.setInt(9,bbean.getRooms());
-            pstmt.setString(10,bbean.getEmail());
+            pstmt.setString(1,bean.getImg());
+            pstmt.setString(2,bean.getName());
+            pstmt.setString(3,bean.getInfo());
+            pstmt.setString(4,bean.getPrice());
+            pstmt.setString(5,bean.getCheckin());
+            pstmt.setString(6,bean.getCheckout());
+            pstmt.setInt(7,bean.getAdults());
+            pstmt.setInt(8,bean.getKids());
+            pstmt.setInt(9,bean.getRooms());
+            pstmt.setString(10,bean.getId());
             pstmt.executeUpdate();
             conn.close();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-    public ArrayList<BookingBean> getBooking(String email){
-        getConnection();
-        ArrayList<BookingBean> bbeans = new ArrayList<>();
-        try{
+    public ArrayList<BookingBean> getBooking(String id){
 
-            String sql = "select * from booking where email = ?";
+        getConnection();
+        ArrayList<BookingBean> beans = new ArrayList<>();
+        try{
+            String sql = "select * from booking where id = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1,email);
+            pstmt.setString(1,id);
             rs = pstmt.executeQuery();
             while (rs.next()){
                 BookingBean tbean = new BookingBean();
-                tbean.setMotel(rs.getString(2));
-                tbean.setLoc(rs.getString(3));
-                tbean.setName(rs.getString(4));
-                tbean.setCheckin(rs.getString(5));
-                tbean.setCheckout(rs.getString(6));
-                tbean.setPrice(rs.getString(7));
+                tbean.setNo(rs.getInt(1));
+                tbean.setImg(rs.getString(2));
+                tbean.setName(rs.getString(3));
+                tbean.setInfo(rs.getString(4));
+                tbean.setPrice(rs.getString(5));
+                tbean.setCheckin(rs.getString(6));
+                tbean.setCheckout(rs.getString(7));
                 tbean.setAdults(rs.getInt(8));
                 tbean.setKids(rs.getInt(9));
                 tbean.setRooms(rs.getInt(10));
-                tbean.setEmail(rs.getString(11));
-                bbeans.add(tbean);
+                tbean.setId(rs.getString(11));
+                tbean.setReserveDate(rs.getString(12));
+                beans.add(tbean);
             }
             conn.close();
 
         }catch (Exception e){
             e.printStackTrace();
         }
-        return bbeans;
+        return beans;
+    }
+    public BookingBean getBooking(int no){
+
+        getConnection();
+        BookingBean bean = new BookingBean();
+        try{
+            String sql = "select * from booking where id = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1,no);
+            rs = pstmt.executeQuery();
+            while (rs.next()){
+
+                bean.setNo(rs.getInt(1));
+                bean.setImg(rs.getString(2));
+                bean.setName(rs.getString(3));
+                bean.setInfo(rs.getString(4));
+                bean.setPrice(rs.getString(5));
+                bean.setCheckin(rs.getString(6));
+                bean.setCheckout(rs.getString(7));
+                bean.setAdults(rs.getInt(8));
+                bean.setKids(rs.getInt(9));
+                bean.setRooms(rs.getInt(10));
+                bean.setId(rs.getString(11));
+                bean.setReserveDate(rs.getString(12));
+            }
+            conn.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return bean;
     }
     public void cancelBooking(int no){
         getConnection();
@@ -100,6 +132,7 @@ public class BookingDAO {
             if (rs.next()){
                 count = rs.getInt(1);
             }
+            conn.close();
         }catch (Exception e){
             e.printStackTrace();
         }

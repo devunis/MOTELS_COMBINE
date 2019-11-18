@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="controller.Booking.BookingBean" %><%--
+<%@ page import="controller.Booking.BookingBean" %>
+<%@ page import="controller.Booking.BookingDAO" %><%--
   Created by IntelliJ IDEA.
   User: jy
   Date: 2019/11/18
@@ -13,26 +14,48 @@
 </head>
 <body>
 <%
-    List<BookingBean> bbeans = (List<BookingBean>)request.getAttribute("bbean");
+    String email = (String)session.getAttribute("email");
+    if (email==null){
+        %>
+<script>
+    alert('로그인이 필요합니다!');
+    history.go(-1);
+</script>
+<%
+    }
+    BookingDAO dao = new BookingDAO();
+    List<BookingBean> bbeans = dao.getBooking(email);
 %>
 <h1>예약확인</h1>
+
+<table>
 <tr>
+    <td>이미</td>
     <td>모텔명</td>
-    <td>위치</td>
+    <td>정보</td>
     <td>체크인</td>
     <td>체크아웃</td>
     <td>가격</td>
+    <td></td>
+    <td></td>
 </tr>
 <%
     for (BookingBean bbean : bbeans){
 %>
-<tr><%=bbean.getMotel()%></tr>
-<tr><%=bbean.getLoc()%></tr>
-<tr><%=bbean.getCheckin()%></tr>
-<tr><%=bbean.getCheckout()%></tr>
-<tr><%=bbean.getPrice()%></tr>
+<tr>
+    <td><img src="<%=bbean.getImg()%>" alt=""></td>
+    <td><%=bbean.getName()%></td>
+    <td><%=bbean.getInfo()%></td>
+    <td><%=bbean.getCheckin()%></td>
+    <td><%=bbean.getCheckout()%></td>
+    <td><%=bbean.getPrice()%></td>
+    <td><button onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'">상세정보 보기</button></td>
+    <td><button onclick="location.href='index.jsp?main=/booking/bookingcancel.jsp?no=<%=bbean.getNo()%>'">예약 취소</button></td>
+
+</tr>
 <%
     }
 %>
+</table>
 </body>
 </html>

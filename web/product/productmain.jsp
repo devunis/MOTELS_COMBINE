@@ -1,4 +1,4 @@
-<%--
+<%@ page import="model.member.MemberDAO" %><%--
   Created by IntelliJ IDEA.
   User: min
   Date: 19. 11. 11.

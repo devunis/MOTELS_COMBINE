@@ -78,6 +78,7 @@
                 </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 </body>
 </html>

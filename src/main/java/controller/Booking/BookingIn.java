@@ -1,6 +1,5 @@
 package controller.Booking;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/booking.do")
-public class BookingProc extends HttpServlet {
+@WebServlet("/bookingin")
+public class BookingIn extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
@@ -18,10 +17,9 @@ public class BookingProc extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
-        BookingBean bean = new BookingBean();
 
+        BookingBean bean = new BookingBean();
         bean.setImg(req.getParameter("img"));
         bean.setName(req.getParameter("name"));
         bean.setInfo(req.getParameter("info"));
@@ -33,11 +31,10 @@ public class BookingProc extends HttpServlet {
         bean.setRooms(Integer.parseInt(req.getParameter("rooms")));
         bean.setId((String)session.getAttribute("email"));
 
-        req.setAttribute("bean",bean);
+        BookingDAO dao = new BookingDAO();
+        dao.insertBooking(bean);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=reserve.jsp");
-        dispatcher.forward(req,resp);
-
+        resp.sendRedirect("index.jsp?main=/booking/bookingmain.jsp");
 
     }
 }
