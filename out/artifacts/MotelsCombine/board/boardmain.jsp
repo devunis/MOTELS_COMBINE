@@ -1,5 +1,6 @@
 <%@ page import="model.board.BoardBean" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="model.board.BoardDAO" %><%--
   Created by IntelliJ IDEA.
   User: min
   Date: 19. 10. 5.
@@ -10,7 +11,8 @@
 <html>
 <body>
 <%
-    List<BoardBean> list = (List<BoardBean>) request.getAttribute("list");
+    BoardDAO bdao = new BoardDAO();
+    List<BoardBean> list = bdao.showAll();
 %>
 <h1>게시판</h1>
 <h2>글목록 있을 예정</h2>

@@ -21,39 +21,43 @@
     alert('로그인이 필요합니다!');
     history.go(-1);
 </script>
+
 <%
     }
     BookingDAO dao = new BookingDAO();
     List<BookingBean> bbeans = dao.getBooking(email);
+    if (bbeans.isEmpty()){
 %>
 <h1>예약확인</h1>
-
-<table>
-<tr>
-    <td>이미</td>
-    <td>모텔명</td>
-    <td>정보</td>
-    <td>체크인</td>
-    <td>체크아웃</td>
-    <td>가격</td>
-    <td></td>
-    <td></td>
-</tr>
+<h1 style="color: darkred">예약내역이 없습니다.</h1>
 <%
-    for (BookingBean bbean : bbeans){
+    }else{
+%>
+<h1>예약확인</h1>
+<table>
+    <tr>
+        <td>이미지</td>
+        <td>모텔명</td>
+        <td>정보</td>
+        <td>체크인</td>
+        <td>체크아웃</td>
+        <td>가격</td>
+    </tr>
+
+
+<%
+        for (BookingBean bbean : bbeans){
 %>
 <tr>
-    <td><img src="<%=bbean.getImg()%>" alt=""></td>
+    <td><img src="<%=bbean.getImg()%>" alt="" onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'"></td>
     <td><%=bbean.getName()%></td>
     <td><%=bbean.getInfo()%></td>
     <td><%=bbean.getCheckin()%></td>
     <td><%=bbean.getCheckout()%></td>
     <td><%=bbean.getPrice()%></td>
-    <td><button onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'">상세정보 보기</button></td>
-    <td><button onclick="location.href='index.jsp?main=/booking/bookingcancel.jsp?no=<%=bbean.getNo()%>'">예약 취소</button></td>
-
 </tr>
 <%
+        }
     }
 %>
 </table>

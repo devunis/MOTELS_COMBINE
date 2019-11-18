@@ -25,8 +25,25 @@
 <%
     }
 %>
-
-<h1>이메일 <%=email%>, 이름 <%=name%>, 사는곳 <%=location%>, 전화번호 <%=tel%></h1>
+<h1>마이페이지</h1>
+<table>
+    <tr>
+        <td>이메일</td>
+        <td><%=email%></td>
+    </tr>
+    <tr>
+        <td>이름</td>
+        <td><%=name%></td>
+    </tr>
+    <tr>
+        <td>사는곳</td>
+        <td><%=location%></td>
+    </tr>
+    <tr>
+        <td>전화번호</td>
+        <td><%=tel%></td>
+    </tr>
+</table>
 <button onclick="location.href='index.jsp?main=/mypage/updateinfo.jsp'">회원수정</button>
 <button onclick="location.href='index.jsp?main=/mypage/deleteinfo.jsp'">회원탈퇴</button>
 
