@@ -35,11 +35,11 @@
      <td><%=p.getPrice()%></td>
 
      <form action="booking.do" method="post">
-         <input type="hidden" name="checkIn" value="<%=request.getAttribute("checkIn")%>">
-         <input type="hidden" name="checkOut" value="<%=request.getAttribute("checkOut")%>">
-         <input type="hidden" name="adults" value="<%=request.getAttribute("adults")%>">
-         <input type="hidden" name="kids" value="<%=request.getAttribute("kids")%>">
-         <input type="hidden" name="rooms" value="<%=request.getAttribute("rooms")%>">
+         <input type="hidden" name="checkIn" value="<%=request.getParameter("start")%>">
+         <input type="hidden" name="checkOut" value="<%=request.getParameter("end")%>">
+         <input type="hidden" name="adults" value="<%=request.getParameter("adults")%>">
+         <input type="hidden" name="kids" value="<%=request.getParameter("kids")%>">
+         <input type="hidden" name="rooms" value="<%=request.getParameter("rooms")%>">
          <input type="hidden" name="img" value="<%=p.getImg()%>">
          <input type="hidden" name="name" value="<%=p.getName()%>">
          <input type="hidden" name="info" value="<%=p.getInfo()%>">

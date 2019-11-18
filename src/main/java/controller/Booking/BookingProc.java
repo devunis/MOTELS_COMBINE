@@ -35,6 +35,7 @@ public class BookingProc extends HttpServlet {
             bean.setAdults(Integer.parseInt(req.getParameter("adults")));
             bean.setKids(Integer.parseInt(req.getParameter("kids")));
             bean.setRooms(Integer.parseInt(req.getParameter("rooms")));
+            System.out.println(bean);
 
             bean.setId(email);
 
