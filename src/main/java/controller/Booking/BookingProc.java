@@ -21,22 +21,28 @@ public class BookingProc extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
         BookingBean bean = new BookingBean();
+        String email = (String) session.getAttribute("email");
+        if (email == null){
+            resp.sendRedirect("Error.jsp");
+        }
+        else {
+            bean.setImg(req.getParameter("img"));
+            bean.setName(req.getParameter("name"));
+            bean.setInfo(req.getParameter("info"));
+            bean.setPrice(req.getParameter("price"));
+            bean.setCheckin(req.getParameter("checkIn"));
+            bean.setCheckout(req.getParameter("checkOut"));
+            bean.setAdults(Integer.parseInt(req.getParameter("adults")));
+            bean.setKids(Integer.parseInt(req.getParameter("kids")));
+            bean.setRooms(Integer.parseInt(req.getParameter("rooms")));
 
-        bean.setImg(req.getParameter("img"));
-        bean.setName(req.getParameter("name"));
-        bean.setInfo(req.getParameter("info"));
-        bean.setPrice(req.getParameter("price"));
-        bean.setCheckin(req.getParameter("checkIn"));
-        bean.setCheckout(req.getParameter("checkOut"));
-        bean.setAdults(Integer.parseInt(req.getParameter("adults")));
-        bean.setKids(Integer.parseInt(req.getParameter("kids")));
-        bean.setRooms(Integer.parseInt(req.getParameter("rooms")));
-        bean.setId((String)session.getAttribute("email"));
+            bean.setId(email);
 
-        req.setAttribute("bean",bean);
+            req.setAttribute("bean", bean);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=reserve.jsp");
-        dispatcher.forward(req,resp);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=reserve.jsp");
+            dispatcher.forward(req, resp);
+        }
 
 
     }

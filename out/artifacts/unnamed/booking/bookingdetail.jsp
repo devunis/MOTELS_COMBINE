@@ -68,9 +68,8 @@
         <td>예약날짜</td>
         <td><%=bean.getReserveDate()%></td>
     </tr>
-
-    <button onclick="history.back()">뒤로가기</button>
-
 </table>
+<button onclick="location.href='index.jsp?main=/booking/bookingcancel.jsp?no=<%=no%>'">예약 취소</button>
+<button onclick="history.back()">뒤로가기</button>
 </body>
 </html>
