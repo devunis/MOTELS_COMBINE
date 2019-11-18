@@ -71,9 +71,6 @@
 
     <button onclick="history.back()">뒤로가기</button>
 
-
-
-
 </table>
 </body>
 </html>

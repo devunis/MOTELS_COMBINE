@@ -70,7 +70,7 @@
                         <div class="row-wrapper">
                             <label for="adults">성인 수</label> <input type="number" min="0" id="adults" name="adults" placeholder="성인 수">
                             <label for="kids">아동 수</label> <input type="number" min="0" id="kids" name="kids" placeholder="아동 수">
-                            <label for="rooms">객실 수</label> <input type="number" min="0" id="rooms" name="rooms" placeholder="객실 수">
+                            <label for="rooms">객실 수</label> <input type="number" min="0" id="rooms" name="rooms" placeholder="객실 수" >
                         </div>
                     </div>
                     <hr class="devider-black mt-1"/>

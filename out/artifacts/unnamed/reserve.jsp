@@ -55,7 +55,7 @@
             </select>
         </td>
     </tr>
-    <form action="/bookingin">
+    <form action="/bookingin" >
         <input type="hidden" name="img" value="<%=bean.getImg()%>">
         <input type="hidden" name="name" value="<%=bean.getName()%>">
         <input type="hidden" name="info" value="<%=bean.getInfo()%>">
@@ -68,18 +68,17 @@
         <tr>
             <td colspan="4"></td>
             <td colspan="6">
-                <input type="checkbox" name="chk_info">위의 사항을 모두 확인하였습니다.
+                <input type="checkbox" name="chk_info" >위의 사항을 모두 확인하였습니다.
             </td>
         </tr>
         <tr>
             <td colspan="4"></td>
             <td colspan="6">
                 <button type="submit">예약하기</button>
-    </form>
-                <button onclick="history.back()">돌아가기</button>
+                <button type="button" onclick="history.back()">돌아가기</button>
             </td>
         </tr>
-
+    </form>
 
 </table>
 
