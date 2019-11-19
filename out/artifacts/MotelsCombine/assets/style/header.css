@@ -1,5 +1,9 @@
 @import "root.css";
 
+header.navbar{
+    background-color: #344955;
+}
+
 nav{
     display: flex;
     flex-direction: row;
