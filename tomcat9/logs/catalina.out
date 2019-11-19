@@ -1,1 +1,3 @@
 ./catalina.sh: 1: eval: /usr/lib/jvm/java-11-openjdk-amd64/bin//bin/java: not found
+./catalina.sh: 1: eval: /usr/lib/jvm/java-11-openjdk-amd64/bin//bin/java: not found
+./catalina.sh: 1: eval: /usr/lib/jvm/java-11-openjdk-amd64/bin//bin/java: not found
