@@ -48,7 +48,7 @@ header.normal-header p{
     display: block;
     margin-top: -28px;
     position: absolute;
-
+    letter-spacing: -0.1rem;
 }
 
 .motel-card-info{

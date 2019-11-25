@@ -1,0 +1,55 @@
+@import "root.css";
+
+h2{
+    font-size: 2.5rem;
+    font-family: 'Noto Sans B', sans-serif;
+}
+
+#signup-form-wrapper, #update-form-wrapper{
+    padding: 15px;
+    box-shadow: #e0e0e0 5px 5px 14px;
+}
+
+#signup-form, #update-form{
+    display: flex;
+    flex-direction: column;
+}
+
+#signup-form .form-item-wrapper, #update-form .form-item-wrapper{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.form-item-wrapper label{
+    display: inline-block;
+    flex-basis: 160px;
+    width: 160px;
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: -0.12rem;
+}
+
+.form-item-wrapper input, .form-item-wrapper select{
+    display: inline-block;
+    width: 100%;
+}
+
+.signup-btn-wrapper, .update-btn-wrapper{
+    text-align: right;
+    padding: 15px 0px 0px 0px;
+    margin-top: 0px;
+    border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 769px) {
+    #signup-form .form-item-wrapper, #update-form .form-item-wrapper{
+        flex-direction: column;
+        width:100%;
+    }
+
+    .form-item-wrapper label{
+        width:100%;
+        flex-basis: initial;
+    }
+}

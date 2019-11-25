@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" href="../assets/style/bookingmain.css"/>
 </head>
 <body>
 <%
@@ -28,38 +28,34 @@
     List<BookingBean> bbeans = dao.getBooking(email);
     if (bbeans.isEmpty()){
 %>
-<h1>예약확인</h1>
-<h1 style="color: darkred">예약내역이 없습니다.</h1>
+<div class="container">
+    <h2>예약확인</h2>
+    <p style="color: darkred">예약내역이 없습니다.</p>
+</div>
 <%
     }else{
 %>
+<div class="container">
 <h1>예약확인</h1>
-<table>
-    <tr>
-        <td>이미지</td>
-        <td>모텔명</td>
-        <td>정보</td>
-        <td>체크인</td>
-        <td>체크아웃</td>
-        <td>가격</td>
-    </tr>
-
-
 <%
         for (BookingBean bbean : bbeans){
 %>
-<tr>
-    <td><img src="<%=bbean.getImg()%>" alt="" onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'"></td>
-    <td><%=bbean.getName()%></td>
-    <td><%=bbean.getInfo()%></td>
-    <td><%=bbean.getCheckin()%></td>
-    <td><%=bbean.getCheckout()%></td>
-    <td><%=bbean.getPrice()%></td>
-</tr>
-<%
-        }
-    }
-%>
+    <div class="booking-card" data-aos="fade-left">
+        <div class="booked-motel-image">
+            <img src="<%=bbean.getImg()%>" alt="" onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'">
+        </div>
+        <div class="booked-motel-contents">
+            <h3 class="booked-motel-name"><%=bbean.getName()%></h3>
+            <ul>
+                <li class="booked-motel-info"><%=bbean.getInfo()%></li>
+                <li class="booked-date"><span><%=bbean.getCheckin()%></span> ~ <span><%=bbean.getCheckout()%></span></span></li>
+                <li class="booked-price"><%=bbean.getPrice()%></li>
+            </ul>
+        </div>
+    </div>
+        <%}%>
+</div>
+    <%}%>
 </table>
 </body>
 </html>

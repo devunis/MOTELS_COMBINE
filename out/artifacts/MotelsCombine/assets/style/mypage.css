@@ -1,0 +1,76 @@
+@import "root.css";
+
+h2{
+    font-size: 2.5rem;
+    font-family: 'Noto Sans B', sans-serif;
+}
+
+.mypage-card-wrapper{
+    padding: 0px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.mypage-info-list{
+    box-shadow: #e0e0e0 5px 5px 5px;
+    width: calc(50% - 10px);
+    word-break: break-all;
+    padding: 0px;
+    margin: 5px;
+}
+
+.mypage-info-list h3{
+    margin: 5px 0px;
+    background-color: #4A6572;
+    color: white;
+    padding: 5px;
+}
+
+.mypage-info-list p{
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: -0.08rem;
+    padding: 5px;
+}
+
+.mypage-submenu-card{
+    box-shadow: #e0e0e0 5px 5px 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.mypage-submenu-card p{
+    flex-basis: 60%;
+    width: 100%;
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    letter-spacing: -0.1rem;
+    padding: 0px 5px;
+}
+
+.mypage-submenu-card .mypage-submenu-btn-wrapper{
+    flex-basis: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border-left: 2px solid #e0e0e0;
+}
+
+@media (max-width: 769px) {
+    .mypage-card-wrapper{
+        flex-wrap: wrap;
+    }
+    .mypage-info-list{
+        width: calc(100% - 10px);
+    }
+
+    .mypage-submenu-card p{
+        justify-content: flex-start;
+        letter-spacing: -0.13rem;
+    }
+}
