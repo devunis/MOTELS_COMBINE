@@ -5,17 +5,17 @@ h2{
     font-family: 'Noto Sans B', sans-serif;
 }
 
-#signup-form-wrapper{
+#signup-form-wrapper, #update-form-wrapper{
     padding: 15px;
     box-shadow: #e0e0e0 5px 5px 14px;
 }
 
-#signup-form{
+#signup-form, #update-form{
     display: flex;
     flex-direction: column;
 }
 
-#signup-form .form-item-wrapper{
+#signup-form .form-item-wrapper, #update-form .form-item-wrapper{
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -35,15 +35,15 @@ h2{
     width: 100%;
 }
 
-.signup-btn-wrapper{
+.signup-btn-wrapper, .update-btn-wrapper{
     text-align: right;
     padding: 15px 0px 0px 0px;
-    margin-top: 15px;
+    margin-top: 0px;
     border-top: 1px solid #e0e0e0;
 }
 
 @media (max-width: 769px) {
-    #signup-form .form-item-wrapper{
+    #signup-form .form-item-wrapper, #update-form .form-item-wrapper{
         flex-direction: column;
         width:100%;
     }
