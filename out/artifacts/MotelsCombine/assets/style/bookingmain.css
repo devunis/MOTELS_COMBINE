@@ -72,5 +72,42 @@ li.booked-price{
     align-self: flex-end;
     font-size: 1.5rem;
     font-family: 'Noto Sans B', sans-serif;
+    color: #5499ba;
+}
 
+@media (max-width: 769px) {
+    .booking-card{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .booked-motel-image{
+        flex-basis: 100%;
+    }
+
+    .booked-motel-image img{
+        width: 100%;
+    }
+
+    .booked-motel-contents{
+        padding: 10px;
+    }
+
+    li.booked-motel-info{
+        width: 100%;
+        border: none;
+        padding: 0px;
+    }
+    li.booked-date{
+        width: 100%;
+        padding: 0px;
+    }
+
+    li.booked-date span{
+        padding-left: 0px;
+    }
+
+    li.booked-price{
+        padding: 0px;
+    }
 }
