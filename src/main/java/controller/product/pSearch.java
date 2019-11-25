@@ -24,10 +24,11 @@ public class pSearch extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ArrayList<String> urlList = null;
 
+        HttpSession session = req.getSession();
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
         if(req.getParameter("num") == null) {
-            HttpSession session = req.getSession();
-            req.setCharacterEncoding("UTF-8");
-            resp.setCharacterEncoding("UTF-8");
             String checkIn = req.getParameter("start");
             String checkOut = req.getParameter("end");
             String loc = req.getParameter("loc");
@@ -44,6 +45,7 @@ public class pSearch extends HttpServlet {
             String checkOutYear = out[0];
             String checkOutMonth = out[1];
             String checkOutDay = out[2];
+
 
             final String url = "https://www.booking.com/searchresults.ko.html?aid=304142&label=gen173nr-1DCAEoggI46AdIM1gEaH2IAQGYARe4ARnIAQzYAQPoAQGIAgGoAgO4ArCMoe4FwAIB&sid=51246f8db467a7f94185d2154db734bf&tmpl=searchresults&age=12&checkin_month=11&checkin_monthday=27&checkin_year=2019&checkout_month=11&checkout_monthday=28&checkout_year=2019&city=-716583&class_interval=1&dest_id=-716583&dest_type=city&from_sf=1&group_adults=1&group_children=0&label_click=undef&no_rooms=1&raw_dest_type=city&room1=A&sb_price_type=total&shw_aparth=1&slp_r_match=0&src=searchresults&srpvid=bbfa7744ca8300e6&ss=서울&ssb=empty&ssne=서울&ssne_untouched=서울&top_ufis=1&nflt=pri=1;pri=2;&rsf=";
             System.out.println("url : " + url);
@@ -65,8 +67,6 @@ public class pSearch extends HttpServlet {
             System.out.println("page : " + urlList.size());
             mlist  = new Process().Get(urlList.get(0));
 
-
-            System.out.println("finish");
             req.setAttribute("mlist", mlist);
             req.setAttribute("urlList", urlList);
             RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=pro.jsp?paging=pcon.jsp");

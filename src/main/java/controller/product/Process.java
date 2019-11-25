@@ -5,7 +5,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 class Process {
@@ -20,8 +19,6 @@ class Process {
             e.printStackTrace();
         }
         Elements element = document.select("body div#right div#ajaxsrwrap");
-
-
 
         Elements name = element.select("h3.sr-hotel__title span.sr-hotel__name");
         Elements price = element.select("div.prco-ltr-right-align-helper span.bui-u-sr-only");
