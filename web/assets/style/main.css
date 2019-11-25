@@ -141,7 +141,7 @@ label[for="location"] {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
     #main-catch h2, #main-search h3 {
         font-size: 2rem;
         letter-spacing: -0.13rem;

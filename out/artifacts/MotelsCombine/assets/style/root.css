@@ -114,6 +114,15 @@ body{
     background-color: white;
 }
 
+.input-bordered{
+    border: none;
+    padding: 8px;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    font-size: 1rem;
+    background-color: white;
+}
+
 /* 버튼 */
 .btn-primary{
     background-color: #89CFF0;
@@ -130,6 +139,39 @@ body{
         padding: 6px 24px;
     }
 }
+
+/* 체크박스 */
+
+input[type="checkbox"].check-primary{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance:none;
+    outline: none;
+    box-shadow: none;
+}
+
+input[type="checkbox"].check-primary::after{
+    content: "";
+    background-image: url("../image/unchecked.svg");
+    background-size: 25px 25px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+}
+
+input[type="checkbox"].check-primary:checked::after{
+    content: "";
+    background-image: url("../image/checked.svg");
+    background-size: 25px 25px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+}
+
+
 
 /* 경계선 */
 
