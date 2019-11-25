@@ -34,5 +34,6 @@
     <script>
       AOS.init();
     </script>
+    <script src="assets/scripts/base.js"></script>
   </body>
 </html>
