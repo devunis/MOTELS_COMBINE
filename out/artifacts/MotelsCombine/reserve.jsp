@@ -43,7 +43,7 @@
         </td>
         <td>
             <select name="pay" id="pay">
-                <option value="cash">현금</option>
+                <option value="cash">현장결제</option>
                 <option value="card">카드</option>
                 <option value="kakaopay">카카오페이</option>
             </select>

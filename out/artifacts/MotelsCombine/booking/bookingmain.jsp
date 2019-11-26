@@ -49,12 +49,13 @@
         for (BookingBean bbean : bbeans){
 %>
 <tr>
-    <td><img src="<%=bbean.getImg()%>" alt="" onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'"></td>
+    <td><img src="<%=bbean.getImg()%>" alt="" ></td>
     <td><%=bbean.getName()%></td>
     <td><%=bbean.getInfo()%></td>
     <td><%=bbean.getCheckin()%></td>
     <td><%=bbean.getCheckout()%></td>
     <td><%=bbean.getPrice()%></td>
+    <td><button onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'">상세정보</button></td>
 </tr>
 <%
         }
