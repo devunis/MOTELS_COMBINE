@@ -29,9 +29,11 @@
     <footer>
       <jsp:include page="footer.jsp" />
     </footer>
+    <script src="assets/jquery/jquery.min.js"></script>
     <script src="assets/aos/aos.js"></script>
     <script>
       AOS.init();
     </script>
+    <script src="assets/scripts/base.js"></script>
   </body>
 </html>
