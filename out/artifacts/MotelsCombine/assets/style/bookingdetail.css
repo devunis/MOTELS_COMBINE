@@ -1,0 +1,71 @@
+@import "root.css";
+
+#booking-detail-wrapper{
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    margin: 20px auto;
+    width:100%;
+}
+
+#booking-detail-image-wrapper{
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+#booking-detail-image-wrapper > img{
+    width: 300px;
+    max-height: 300px;
+}
+
+#booking-detail-wrapper table {
+    box-shadow: #e0e0e0 5px 5px 5px;
+    max-height: 300px;
+    flex-grow: 1;
+    margin: 10px;
+}
+#booking-detail-wrapper table tr th {
+    text-align: left;
+    border-right: 1px solid #e0e0e0;
+    width: 30%;
+    letter-spacing: -0.1rem;
+    font-family: 'Noto Sans T', sans-serif;
+    padding: 3px 0px;
+}
+
+#booking-detail-wrapper table tr td{
+    font-family: 'Noto Sans T', sans-serif;
+}
+
+#booking-detail-btn-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-detail-btn-card{
+    padding: 10px 13px;
+    box-shadow: #e0e0e0 5px 5px 5px;
+    margin: 5px 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.booking-detail-btn-card-direction{
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 769px) {
+    #booking-detail-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    #booking-detail-image-wrapper{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
