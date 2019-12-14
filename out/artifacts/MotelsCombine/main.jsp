@@ -15,6 +15,7 @@
         <div class="container">
             <div class="content-overlay-dark" data-aos="fade-down" data-aos-duration="900">
                 <h2>좋은 모텔만 모아모아~</h2>
+                <img id="main-catch-logo" src="assets/image/main_icon_white.svg" />
                 <p>모텔만을 위한 서비스, 모텔스컴바인을 이용해보세요.</p>
                 <hr class="devider-white"/>
                 <button class="btn-primary align-center" style="margin-top: 20px;" onclick="location.href='#main-search'">모텔 알아보기</button>
