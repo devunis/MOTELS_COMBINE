@@ -21,7 +21,7 @@
 %>
 
 <div class="container">
-    <h1>예약번호 #<%=no%>에 대한 내용입니다.</h1>
+    <h2>예약번호 #<%=no%>에 대한 내용입니다.</h2>
 
     <div id="booking-detail-wrapper">
         <div id="booking-detail-image-wrapper">

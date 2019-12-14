@@ -9,13 +9,23 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../assets/style/bookingcancel.css"/>
 </head>
 <body>
-<form action="/bookingCancel">
-    비밀번호를 입력하세요
-    <input type="hidden" name="no" value="<%=request.getParameter("no")%>">
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="삭제">
-</form>
+<div id="cancel-wrapper">
+    <form class="content-overlay-dark" id="cancel-card" action="/bookingCancel">
+        <h2>예약 취소</h2>
+        <p>
+            비밀번호를 입력하세요
+        </p>
+        <div id="cancel-form-wrapper">
+            <input type="hidden" name="no" value="<%=request.getParameter("no")%>">
+            <input class="input-bordered" type="password" id="pwd" name="pwd">
+            <input class="btn-primary" type="submit" value="확인">
+        </div>
+    </form>
+</div>
+
+
 </body>
 </html>
