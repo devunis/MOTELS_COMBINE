@@ -11,8 +11,9 @@
 <p>
     <%
         ArrayList<String> urlList = (ArrayList<String>) request.getAttribute("urlList");
-        for( int i=0; i<urlList.size(); i++) {%>
-    <a href="/psearch?url=<%=urlList.get(i)%>"><%= i+1 %></a>
+        for( int i=0; i<urlList.size(); i++) {
+    %>
+    <a href="psearch?pageNum=<%=i%>&<checkIn=<%=request.getParameter("start")%>&checkOut=<%=request.getParameter("end")%>&adults=<%=request.getParameter("adults")%>&kids=<%=request.getParameter("kids")%>&rooms=<%=request.getParameter("rooms")%>"><%=i+1%></a>
     <% } %>
 </p>
 </body>
