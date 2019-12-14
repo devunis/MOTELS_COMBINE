@@ -1,0 +1,138 @@
+@import "root.css";
+.jumbotron{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+h2#board-heading{
+    font-size: 3rem;
+    font-family: 'Noto Sans B', sans-serif;
+    font-weight: normal;
+    margin: 0px;
+}
+
+p#board-description{
+    font-size: 1.8rem;
+    font-family: 'Noto Sans T', sans-serif;
+    font-weight: normal;
+    margin: 0px;
+    letter-spacing: -0.1rem;
+}
+
+#board-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#board-card{
+    background-color: white;
+    width: calc(50% - 10px);
+    border-radius: 10px;
+    margin: 15px 5px;
+    box-shadow: #e0e0e0 5px 5px 14px;
+    display: flex;
+    flex-direction: column;
+    word-break: break-all;
+}
+
+#board-head-meta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px;
+    font-family: 'Noto Sans T', sans-serif;
+}
+
+#board-meta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 5px 20px;
+    font-family: 'Noto Sans T', sans-serif;
+}
+
+span#board-no{
+    font-size: 2rem;
+}
+
+#board-title{
+    padding: 0px 20px 5px 20px;
+}
+
+#board-title a{
+    text-decoration: none;
+    color: black;
+}
+#board-title h3{
+    font-size: 1.8rem;
+    margin: 0px;
+    font-family: 'Noto Sans R', sans-serif;
+    letter-spacing: -0.1rem;
+}
+
+button#board-write{
+    background-color: #4A6572;
+    border-radius: 100% 0px 0px 0px;
+    border: none;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    animation-name: write-btn-show;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+button#board-write > img{
+    margin: 50% 0px 10px auto;
+    order: 1;
+    width: 40%;
+}
+
+button#board-write span{
+    width: 100%;
+    text-align: right;
+    order: 2;
+    font-family: 'Noto Sans T', sans-serif;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+@keyframes write-btn-show {
+    from {
+        box-shadow: 0px 0px 2px 50vw #4A6572;
+    }
+    to {
+        box-shadow: 0px 0px 0px 0px rgba(74,101,114,0.3) ;
+    }
+}
+
+/*BOARD READ*/
+#board-read-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+#board-comment-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 769px) {
+    #board-wrapper{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #board-card{
+        width: 100%;
+    }
+}
+

@@ -21,7 +21,7 @@
             var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
             var marker = new google.maps.Marker({
                 position: LatLng,
-                map: map,
+                map: map
             });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
