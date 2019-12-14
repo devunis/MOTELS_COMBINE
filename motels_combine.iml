@@ -29,8 +29,11 @@
     <orderEntry type="library" name="commons-collections4-4.1" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.26-bin" level="project" />
     <orderEntry type="library" name="jsoup-1.12.1" level="project" />
+    <orderEntry type="library" name="jsoup-1.12.1" level="project" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.12.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
-    <orderEntry type="library" name="jsoup-1.12.1" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
   </component>
 </module>

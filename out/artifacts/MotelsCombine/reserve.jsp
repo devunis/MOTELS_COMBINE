@@ -1,6 +1,6 @@
-<%@ page import="controller.Booking.BookingBean" %>
+<%@ page import="model.booking.BookingBean" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="controller.Booking.BookingDAO" %>
+<%@ page import="model.booking.BookingDAO" %>
 <%--
   Created by IntelliJ IDEA.
   User: min
@@ -77,6 +77,7 @@
             <button type="button" class="btn-primary" onclick="history.back()">돌아가기</button>
         </div>
     </form>
+
 
 </div>
 </body>

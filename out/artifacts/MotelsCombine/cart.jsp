@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.booking.BookingBean" %>
-<%@ page import="model.booking.BookingDAO" %><%--
+<%@ page import="model.booking.BookingDAO" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: jy
   Date: 2019/11/18
@@ -16,7 +17,7 @@
 <%
     String email = (String)session.getAttribute("email");
     if (email==null){
-        %>
+%>
 <script>
     alert('로그인이 필요합니다!');
     history.go(-1);
@@ -24,26 +25,25 @@
 
 <%
     }
-    BookingDAO dao = new BookingDAO();
-    List<BookingBean> bbeans = dao.getBooking(email);
+    List<BookingBean> bbeans = (ArrayList<BookingBean>) session.getAttribute("cart");
     if (bbeans.isEmpty()){
 %>
 <div class="container">
-    <h2>예약확인</h2>
-    <p style="color: darkred">예약내역이 없습니다.</p>
+    <h2>장바구니</h2>
+    <p style="color: darkred">장바구니 목록이 없습니다.</p>
 </div>
 <%
-    }else{
+}else{
 %>
 <div class="container">
-<h1>예약확인</h1>
-<%
+    <h1>장바구니</h1>
+    <%
         for (BookingBean bbean : bbeans){
-%>
+    %>
 
     <div class="booking-card" data-aos="fade-left">
         <div class="booked-motel-image">
-            <img src="<%=bbean.getImg()%>" alt="" onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'">
+            <img src="<%=bbean.getImg()%>" alt="">
         </div>
         <div class="booked-motel-contents">
             <h3 class="booked-motel-name"><%=bbean.getName()%></h3>
@@ -54,8 +54,8 @@
             </ul>
         </div>
     </div>
-        <%}%>
-</div>
     <%}%>
+</div>
+<%}%>
 </body>
 </html>

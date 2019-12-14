@@ -1,4 +1,4 @@
-package controller.Booking;
+package model.booking;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

@@ -1,4 +1,4 @@
-package controller.Booking;
+package model.booking;
 
 public class BookingBean {
     private int no;

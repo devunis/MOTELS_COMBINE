@@ -1,5 +1,5 @@
-<%@ page import="controller.Booking.BookingDAO" %>
-<%@ page import="controller.Booking.BookingBean" %>
+<%@ page import="model.booking.BookingDAO" %>
+<%@ page import="model.booking.BookingBean" %>
 <%--
   Created by IntelliJ IDEA.
   User: jy
@@ -70,6 +70,7 @@
         <td><%=bean.getReserveDate()%></td>
     </tr>
 </table>
+<jsp:include page="../googleMap.jsp" />
 <button onclick="location.href='index.jsp?main=/booking/bookingcancel.jsp?no=<%=no%>'">예약 취소</button>
 <button onclick="location.href='#'">전화하기</button>
 <button onclick="history.back()">뒤로가기</button>

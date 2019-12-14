@@ -10,6 +10,29 @@
 <html>
 <head>
     <link rel="stylesheet" href="assets/style/signup.css" />
+    <script>
+        function memberCheck() {
+            var userID = document.querySelector("#email").value;
+            var data = JSON.stringify({"id":userID});
+            var url = "http://" + window.location.hostname + ":" + window.location.port + "/member-check";
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST",url);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
+
+            xhr.addEventListener("onload", function (evt) {
+                var data = JSON.parse(xhr.responseText);
+                if (data == "1"){
+                    document.querySelector("#checkemail").style.color= "red";
+                    document.querySelector("#checkemail").innerHTML = "사용할 수 없습니다."
+                }
+                else{
+                    document.querySelector("#checkemail").style.color= "blue";
+                    document.querySelector("#checkemail").innerHTML = "사용 가능합니다."
+                }
+            })
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -19,6 +42,8 @@
                 <div class="form-item-wrapper">
                     <label for="email">이메일</label>
                     <input type="email" id="email" class="input-bordered" name="email" placeholder="이메일" />
+<%--                    <button class="btn-primary" onclick="memberCheck()" onsubmit="return false;">아이디 중복 확인</button>--%>
+                    <div id="checkemail"></div>
                 </div>
                 <div class="form-item-wrapper">
                     <label for="pw">비밀번호</label>
@@ -71,8 +96,6 @@
                 </div>
             </form>
         </div>
-
     </div>
-
 </body>
 </html>
