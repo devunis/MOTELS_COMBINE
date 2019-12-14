@@ -1,5 +1,5 @@
-<%@ page import="controller.Booking.BookingDAO" %>
-<%@ page import="controller.Booking.BookingBean" %>
+<%@ page import="model.booking.BookingDAO" %>
+<%@ page import="model.booking.BookingBean" %>
 <%--
   Created by IntelliJ IDEA.
   User: jy

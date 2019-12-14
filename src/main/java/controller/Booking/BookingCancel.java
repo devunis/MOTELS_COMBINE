@@ -1,5 +1,6 @@
 package controller.Booking;
 
+import model.booking.BookingDAO;
 import model.member.MemberDAO;
 
 import javax.servlet.ServletException;

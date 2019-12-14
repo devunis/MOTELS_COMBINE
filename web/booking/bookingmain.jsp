@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="controller.Booking.BookingBean" %>
-<%@ page import="controller.Booking.BookingDAO" %><%--
+<%@ page import="model.booking.BookingBean" %>
+<%@ page import="model.booking.BookingDAO" %><%--
   Created by IntelliJ IDEA.
   User: jy
   Date: 2019/11/18
@@ -25,8 +25,8 @@
 <%
     }
     BookingDAO dao = new BookingDAO();
-    List<BookingBean> bbeans = dao.getBooking(email);
-    if (bbeans.isEmpty()){
+    List<BookingBean> bean = dao.getBooking(email);
+    if (bean.isEmpty()){
 %>
 <div class="container">
     <h2>예약확인</h2>
@@ -38,18 +38,18 @@
 <div class="container">
 <h1>예약확인</h1>
 <%
-        for (BookingBean bbean : bbeans){
+        for (BookingBean b : bean){
 %>
     <div class="booking-card" data-aos="fade-left">
         <div class="booked-motel-image">
-            <img src="<%=bbean.getImg()%>" alt="" onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=bbean.getNo()%>'">
+            <img src="<%=b.getImg()%>" alt="" onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=b.getNo()%>'">
         </div>
         <div class="booked-motel-contents">
-            <h3 class="booked-motel-name"><%=bbean.getName()%></h3>
+            <h3 class="booked-motel-name"><%=b.getName()%></h3>
             <ul>
-                <li class="booked-motel-info"><%=bbean.getInfo()%></li>
-                <li class="booked-date"><span><%=bbean.getCheckin()%></span> ~ <span><%=bbean.getCheckout()%></span></span></li>
-                <li class="booked-price"><%=bbean.getPrice()%></li>
+                <li class="booked-motel-info"><%=b.getInfo()%></li>
+                <li class="booked-date"><span><%=b.getCheckin()%></span> ~ <span><%=b.getCheckout()%></span></li>
+                <li class="booked-price"><%=b.getPrice()%></li>
             </ul>
         </div>
     </div>

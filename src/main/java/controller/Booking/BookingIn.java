@@ -1,5 +1,8 @@
 package controller.Booking;
 
+import model.booking.BookingBean;
+import model.booking.BookingDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
