@@ -12,7 +12,7 @@
     <%
         ArrayList<String> urlList = (ArrayList<String>) request.getAttribute("urlList");
         for( int i=0; i<urlList.size(); i++) {%>
-    <a href="/psearch?num=<%=i%>"><%= i+1 %></a>
+    <a href="/psearch?url=<%=urlList.get(i)%>"><%= i+1 %></a>
     <% } %>
 </p>
 </body>
