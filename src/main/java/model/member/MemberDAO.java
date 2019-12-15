@@ -1,7 +1,5 @@
 package model.member;
 
-import model.booking.BookingBean;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
