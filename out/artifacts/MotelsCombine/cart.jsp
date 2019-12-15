@@ -16,8 +16,8 @@
 <body>
 <%
     request.setCharacterEncoding("UTF-8");
-    List<BookingBean> bbeans = (ArrayList<BookingBean>)request.getAttribute("cart");
-    if (bbeans == null){
+    List<BookingBean> beans = (ArrayList<BookingBean>)request.getAttribute("cart");
+    if (beans == null){
 %>
 <div class="container">
     <h2>장바구니</h2>
@@ -26,21 +26,22 @@
 <%}else{%>
 <div class="container">
     <h1>장바구니</h1>
+    <button onclick="history.go(-1)">다른 모텔 보러가기</button>
     <%
-        for (int i = 0 ; i < bbeans.size();i++){
+        for (int i = 0 ; i < beans.size();i++){
     %>
 
     <div class="booking-card" data-aos="fade-left">
         <div class="booked-motel-image">
-            <img src="<%=bbeans.get(i).getImg()%>" alt="">
+            <img src="<%=beans.get(i).getImg()%>" alt="">
         </div>
         <div class="booked-motel-contents">
-            <h3 class="booked-motel-name"><%=bbeans.get(i).getName()%></h3>
+            <h3 class="booked-motel-name"><%=beans.get(i).getName()%></h3>
             <ul>
-                <li class="booked-motel-info"><%=bbeans.get(i).getInfo()%></li>
-                <li class="booked-date"><span><%=bbeans.get(i).getCheckin()%></span> ~ <span><%=bbeans.get(i).getCheckout()%></span></li>
-                <li class="booked-price"><%=bbeans.get(i).getPrice()%></li>
-                <li class="booked-date" onclick="location.href='booking.do?img=<%=bbeans.get(i).getImg()%>&name=<%=bbeans.get(i).getName()%>&info=<%=bbeans.get(i).getInfo()%>&price=<%=bbeans.get(i).getPrice()%>'"><span>예약하기</span>
+                <li class="booked-motel-info"><%=beans.get(i).getInfo()%></li>
+                <li class="booked-date"><span><%=beans.get(i).getCheckin()%></span> ~ <span><%=beans.get(i).getCheckout()%></span></li>
+                <li class="booked-price"><%=beans.get(i).getPrice()%></li>
+                <li class="booked-date" onclick="location.href='booking.do?img=<%=beans.get(i).getImg()%>&name=<%=beans.get(i).getName()%>&info=<%=beans.get(i).getInfo()%>&price=<%=beans.get(i).getPrice()%>&checkIn=<%=beans.get(i).getCheckin()%>&checkOut=<%=beans.get(i).getCheckout()%>&adults=<%=beans.get(i).getAdults()%>&kids=<%=beans.get(i).getKids()%>&rooms=<%=beans.get(i).getRooms()%>'"><span>예약하기</span>
                 <li class="booked-date" onclick="location.href='delete-cart?no=<%=i%>'"><span>삭제</span>
             </ul>
         </div>
