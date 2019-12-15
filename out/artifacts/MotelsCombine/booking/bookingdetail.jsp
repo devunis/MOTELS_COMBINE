@@ -30,47 +30,47 @@
             <table>
                 <tr>
                     <th>예약번호</th>
-                    <td><%=no%></td>
+                    <td>: <%=no%></td>
                 </tr>
                 <tr>
                     <th>모텔명</th>
-                    <td><%=bean.getName()%></td>
+                    <td>: <%=bean.getName()%></td>
                 </tr>
                 <tr>
                     <th>정보</th>
-                    <td><%=bean.getInfo()%></td>
+                    <td>: <%=bean.getInfo()%></td>
                 </tr>
                 <tr>
                     <th>가격</th>
-                    <td><%=bean.getPrice()%></td>
+                    <td>: <%=bean.getPrice()%></td>
                 </tr>
                 <tr>
                     <th>체크인</th>
-                    <td><%=bean.getCheckin()%></td>
+                    <td>: <%=bean.getCheckin()%></td>
                 </tr>
                 <tr>
                     <th>체크아웃</th>
-                    <td><%=bean.getCheckout()%></td>
+                    <td>: <%=bean.getCheckout()%></td>
                 </tr>
                 <tr>
                     <th>성인</th>
-                    <td><%=bean.getAdults()%></td>
+                    <td>: <%=bean.getAdults()%></td>
                 </tr>
                 <tr>
                     <th>아동</th>
-                    <td><%=bean.getKids()%></td>
+                    <td>: <%=bean.getKids()%></td>
                 </tr>
                 <tr>
                     <th>방</th>
-                    <td><%=bean.getRooms()%></td>
+                    <td>: <%=bean.getRooms()%></td>
                 </tr>
                 <tr>
                     <th>예약자 아이디</th>
-                    <td><%=bean.getId()%></td>
+                    <td>: <%=bean.getId()%></td>
                 </tr>
                 <tr>
                     <th>예약날짜</th>
-                    <td><%=bean.getReserveDate()%></td>
+                    <td>: <%=bean.getReserveDate()%></td>
                 </tr>
             </table>
             <div id="booking-detail-btn-wrapper">
