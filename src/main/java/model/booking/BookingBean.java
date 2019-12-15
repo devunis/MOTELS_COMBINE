@@ -13,8 +13,6 @@ public class BookingBean {
     private int kids;
     private int rooms;
 
-
-
     private String id;
 
     public int getNo() {

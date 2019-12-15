@@ -15,42 +15,33 @@
 </head>
 <body>
 <%
-    String email = (String)session.getAttribute("email");
-    if (email==null){
-%>
-<script>
-    alert('로그인이 필요합니다!');
-    history.go(-1);
-</script>
-
-<%
-    }
-    List<BookingBean> bbeans = (ArrayList<BookingBean>) session.getAttribute("cart");
-    if (bbeans.isEmpty()){
+    request.setCharacterEncoding("UTF-8");
+    List<BookingBean> bbeans = (ArrayList<BookingBean>)request.getAttribute("cart");
+    if (bbeans == null){
 %>
 <div class="container">
     <h2>장바구니</h2>
     <p style="color: darkred">장바구니 목록이 없습니다.</p>
 </div>
-<%
-}else{
-%>
+<%}else{%>
 <div class="container">
     <h1>장바구니</h1>
     <%
-        for (BookingBean bbean : bbeans){
+        for (int i = 0 ; i < bbeans.size();i++){
     %>
 
     <div class="booking-card" data-aos="fade-left">
         <div class="booked-motel-image">
-            <img src="<%=bbean.getImg()%>" alt="">
+            <img src="<%=bbeans.get(i).getImg()%>" alt="">
         </div>
         <div class="booked-motel-contents">
-            <h3 class="booked-motel-name"><%=bbean.getName()%></h3>
+            <h3 class="booked-motel-name"><%=bbeans.get(i).getName()%></h3>
             <ul>
-                <li class="booked-motel-info"><%=bbean.getInfo()%></li>
-                <li class="booked-date"><span><%=bbean.getCheckin()%></span> ~ <span><%=bbean.getCheckout()%></span></span></li>
-                <li class="booked-price"><%=bbean.getPrice()%></li>
+                <li class="booked-motel-info"><%=bbeans.get(i).getInfo()%></li>
+                <li class="booked-date"><span><%=bbeans.get(i).getCheckin()%></span> ~ <span><%=bbeans.get(i).getCheckout()%></span></li>
+                <li class="booked-price"><%=bbeans.get(i).getPrice()%></li>
+                <li class="booked-date" onclick="location.href='booking.do?img=<%=bbeans.get(i).getImg()%>&name=<%=bbeans.get(i).getName()%>&info=<%=bbeans.get(i).getInfo()%>&price=<%=bbeans.get(i).getPrice()%>'"><span>예약하기</span>
+                <li class="booked-date" onclick="location.href='delete-cart?no=<%=i%>'"><span>삭제</span>
             </ul>
         </div>
     </div>

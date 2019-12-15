@@ -1,7 +1,8 @@
-package controller.Booking;
+package controller.cart;
 
 import model.booking.BookingBean;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @WebServlet("/insert-cart")
@@ -21,6 +23,7 @@ public class BookingCart extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
         BookingBean bean = new BookingBean();
         bean.setImg(req.getParameter("img"));
@@ -33,10 +36,18 @@ public class BookingCart extends HttpServlet {
         bean.setKids(Integer.parseInt(req.getParameter("kids")));
         bean.setRooms(Integer.parseInt(req.getParameter("rooms")));
         bean.setId((String)session.getAttribute("email"));
-        List<BookingBean> beans = (ArrayList<BookingBean>)session.getAttribute("cart");
-        beans.add(bean);
-        session.setAttribute("cart",beans);
-
-        resp.sendRedirect("index.jsp?main=cart.jsp");
+        if (session.getAttribute("cart") == null){
+            ArrayList<BookingBean> beans = new ArrayList<>();
+            beans.add(bean);
+            session.setAttribute("cart",beans);
+        }
+        else {
+            List<BookingBean> beans = (ArrayList<BookingBean>)session.getAttribute("cart");
+            beans.add(bean);
+            session.setAttribute("cart",beans);
+        }
+        resp.sendRedirect("/cart");
+//        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=cart.jsp");
+//        dispatcher.forward(req, resp);
     }
 }
