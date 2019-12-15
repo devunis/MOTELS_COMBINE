@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
-      <module name="motels_combine" target="11" />
+      <module name="motels_combine" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
