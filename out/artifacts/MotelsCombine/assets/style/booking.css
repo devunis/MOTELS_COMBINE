@@ -1,8 +1,20 @@
 @import "root.css";
 
+h2{
+    font-family: 'Noto Sans B', sans-serif;
+    font-size: 2rem;
+}
+
+/* BOOKING DETAIL */
+
 #booking-detail-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 #booking-detail-img-map-wrapper{
@@ -18,8 +30,16 @@
 }
 
 #booking-detail-contents-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 60%;
-    box-shadow: #e0e0e0 5px 5px 5px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 5px;
+            box-shadow: #e0e0e0 5px 5px 5px;
     padding: 10px 20px 20px 20px;
 }
 
@@ -36,5 +56,71 @@
 
 
 #booking-detail-btn-wrapper{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+    text-align: right;
+}
 
+
+/* BOOKING CANCEL */
+#booking-cancel-wrapper{
+    width: 100%;
+    height: calc(100vh - 100px);
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+    background-image: url("../../assets/image/login_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-attachment: fixed;
+}
+
+#booking-cancel-wrapper form{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 300px;
+}
+
+#booking-cancel-wrapper form p{
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.2rem;
+}
+
+#booking-cancel-wrapper form button{
+    margin-top: 20px;
+}
+
+@media (max-width: 769px) {
+    #booking-detail-wrapper{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    #booking-detail-wrapper > *{
+        width: 100%;
+        margin: 5px 0px;
+    }
 }

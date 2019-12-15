@@ -1,4 +1,4 @@
-g<%--
+<%--
   Created by IntelliJ IDEA.
   User: jy
   Date: 10/10/2019
@@ -9,13 +9,17 @@ g<%--
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../assets/style/deleteinfo.css"/>
 </head>
 <body>
-<h1>회원탈퇴</h1>
-<form action="/member-delete" method="post">
-    <label for="pw">비밀번호 입력</label>
-    <input type="password" id="pw" name="pw">
-    <input type="submit" value="탈퇴">
-</form>
+<div id="delete-info-wrapper">
+    <form class="content-overlay-dark" action="/member-delete" method="post">
+        <h2>회원탈퇴</h2>
+        <label for="pw">비밀번호 입력</label>
+        <input class="input-bordered" type="password" id="pw" name="pw" />
+        <button class="btn-primary align-right">탈퇴</button>
+    </form>
+</div>
+
 </body>
 </html>

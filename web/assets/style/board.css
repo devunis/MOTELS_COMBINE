@@ -1,9 +1,18 @@
 @import "root.css";
 .jumbotron{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     min-height: 200px;
 }
 h2#board-heading{
@@ -22,33 +31,59 @@ p#board-description{
 }
 
 #board-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 #board-card{
     background-color: white;
     width: calc(50% - 10px);
     border-radius: 10px;
     margin: 15px 5px;
-    box-shadow: #e0e0e0 5px 5px 14px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 14px;
+            box-shadow: #e0e0e0 5px 5px 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     word-break: break-all;
 }
 
 #board-head-meta{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 0px 20px;
     font-family: 'Noto Sans T', sans-serif;
 }
 
 #board-meta{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 0px 20px 5px 20px;
     font-family: 'Noto Sans T', sans-serif;
 }
@@ -81,43 +116,75 @@ button#board-write{
     position: fixed;
     right: 0px;
     bottom: 0px;
-    animation-name: write-btn-show;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
+    -webkit-animation-name: write-btn-show;
+            animation-name: write-btn-show;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 
 }
 
 button#board-write > img{
     margin: 50% 0px 10px auto;
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     width: 40%;
 }
 
 button#board-write span{
     width: 100%;
     text-align: right;
-    order: 2;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
     font-family: 'Noto Sans T', sans-serif;
     font-weight: bold;
     color: #e0e0e0;
 }
 
-@keyframes write-btn-show {
+@-webkit-keyframes write-btn-show {
     from {
-        box-shadow: 0px 0px 2px 50vw #4A6572;
+        -webkit-box-shadow: 0px 0px 2px 50vw #4A6572;
+                box-shadow: 0px 0px 2px 50vw #4A6572;
     }
     to {
-        box-shadow: 0px 0px 0px 0px rgba(74,101,114,0.3) ;
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(74,101,114,0.3) ;
+                box-shadow: 0px 0px 0px 0px rgba(74,101,114,0.3) ;
+    }
+}
+
+@keyframes write-btn-show {
+    from {
+        -webkit-box-shadow: 0px 0px 2px 50vw #4A6572;
+                box-shadow: 0px 0px 2px 50vw #4A6572;
+    }
+    to {
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(74,101,114,0.3) ;
+                box-shadow: 0px 0px 0px 0px rgba(74,101,114,0.3) ;
     }
 }
 
 /*BOARD READ*/
 #board-read-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -135,12 +202,18 @@ h3#board-read-title{
 }
 
 #board-read-btn-wrapper{
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
 }
 
 #board-comment-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
 }
 
@@ -161,17 +234,27 @@ p#board-read-contents{
 #board-read{
     width: 100%;
     min-height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-right: 30px;
     padding: 10px 10px 10px 10px;
     border-right: 1px solid #e0e0e0;
-    box-shadow: #e0e0e0 5px 5px 14px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 14px;
+            box-shadow: #e0e0e0 5px 5px 14px;
 }
 
 #board-comment-wrapper{
-    flex-grow: 0;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
 }
 
 #board-comment-wrapper h3{
@@ -182,8 +265,13 @@ p#board-read-contents{
 }
 
 #board-comment-form form{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 #board-comment-form form > *{
@@ -202,13 +290,22 @@ p#board-read-contents{
 }
 
 #board-comment-idpw-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 #board-comment-idpw-wrapper input{
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin-bottom: 10px;
     max-width: calc(50% - 10px);
 }
@@ -219,8 +316,13 @@ p#board-read-contents{
 }
 
 .comment-item{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 10px 0px;
     padding: 10px 0px;
     border-top: 1px solid #e0e0e0;
@@ -256,13 +358,23 @@ p#comment-contents{
 }
 
 .update-form-wrapper form{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .update-form-contents{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e0e0e0;
@@ -282,9 +394,16 @@ p#comment-contents{
 }
 
 .update-form-password{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-bottom: 20px;
 }
 
@@ -296,7 +415,9 @@ p#comment-contents{
 }
 
 .update-form-password input{
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     width: 100%;
 }
 
@@ -307,9 +428,15 @@ p#comment-contents{
 
 /* DELETE : 댓글, 본문 공통 */
 .board-delete-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
     width: 100%;
     height: calc(100vh - 100px);
@@ -322,8 +449,13 @@ p#comment-contents{
 }
 
 .board-delete-wrapper form{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 300px;
 }
 
@@ -333,9 +465,15 @@ p#comment-contents{
 
 @media (max-width: 1023px) {
     #board-wrapper{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
     #board-card{
         width: 100%;
@@ -343,7 +481,10 @@ p#comment-contents{
 
     /*BOARD READ*/
     #board-read-wrapper{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     #board-read{
         width: 100%;

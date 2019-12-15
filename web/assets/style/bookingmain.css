@@ -7,13 +7,17 @@ h2{
 
 .booking-card{
     padding: 20px;
-    box-shadow: #e0e0e0 5px 5px 5px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 5px;
+            box-shadow: #e0e0e0 5px 5px 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 10px;
 }
 
 .booked-motel-image{
-    flex-basis: 40%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
 }
 
 .booked-motel-image img{
@@ -24,8 +28,13 @@ h2{
 .booked-motel-contents{
     width: 100%;
     padding-left: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     /*justify-content: space-between;*/
 }
 
@@ -38,9 +47,15 @@ h3.booked-motel-name{
 .booked-motel-contents ul{
     margin: 0px;
     padding: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .booked-motel-contents li{
@@ -69,7 +84,8 @@ li.booked-date span{
 
 li.booked-price{
     width: 100%;
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     font-size: 1.5rem;
     font-family: 'Noto Sans B', sans-serif;
     color: #5499ba;
@@ -77,12 +93,16 @@ li.booked-price{
 
 @media (max-width: 769px) {
     .booking-card{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         padding: 10px;
     }
 
     .booked-motel-image{
-        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
     }
 
     .booked-motel-image img{
@@ -110,4 +130,32 @@ li.booked-price{
     li.booked-price{
         padding: 0px;
     }
+}
+
+/* CART */
+
+#cart-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.cart-btn-wrapper{
+    margin-top: 30px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+}
+
+#cart-other-motel-wrapper{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 20px;
 }

@@ -8,11 +8,14 @@ h2{
 .mypage-card-wrapper{
     padding: 0px;
     margin-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .mypage-info-list{
-    box-shadow: #e0e0e0 5px 5px 5px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 5px;
+            box-shadow: #e0e0e0 5px 5px 5px;
     width: calc(50% - 10px);
     word-break: break-all;
     padding: 0px;
@@ -34,43 +37,64 @@ h2{
 }
 
 .mypage-submenu-card{
-    box-shadow: #e0e0e0 5px 5px 5px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 5px;
+            box-shadow: #e0e0e0 5px 5px 5px;
     padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 .mypage-submenu-card p{
-    flex-basis: 60%;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
     width: 100%;
     font-family: 'Noto Sans R', sans-serif;
     font-size: 1.2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
     letter-spacing: -0.1rem;
     padding: 0px 5px;
 }
 
 .mypage-submenu-card .mypage-submenu-btn-wrapper{
-    flex-basis: 40%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
     border-left: 2px solid #e0e0e0;
 }
 
 @media (max-width: 769px) {
     .mypage-card-wrapper{
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
     .mypage-info-list{
         width: calc(100% - 10px);
     }
 
     .mypage-submenu-card p{
-        justify-content: flex-start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
         letter-spacing: -0.13rem;
     }
 }

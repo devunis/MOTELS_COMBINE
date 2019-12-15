@@ -10,7 +10,7 @@
 <html>
 <head>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <link rel="stylesheet" href="assets/style/signup.css" />
+    <link rel="stylesheet" href="../assets/style/signup.css" />
     <script type="text/javascript">
         function pwdCheck() {
             var pw1 = $('#pw').val();

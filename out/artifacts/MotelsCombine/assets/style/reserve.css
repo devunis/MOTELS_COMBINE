@@ -6,12 +6,18 @@ h2{
 }
 
 .motel-check{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 .motel-check-image{
-    flex-basis: 33%;
+    -ms-flex-preferred-size: 33%;
+        flex-basis: 33%;
 }
 
 .motel-check-image img{
@@ -19,13 +25,21 @@ h2{
 }
 
 .motel-check-contents{
-    box-shadow: #e0e0e0 5px 5px 14px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 14px;
+            box-shadow: #e0e0e0 5px 5px 14px;
     margin-left: 15px;
     padding: 20px 10px;
     width: 100%;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     font-family: 'Noto Sans R', sans-serif;
 }
 
@@ -51,20 +65,31 @@ p#motel-check-chkdate{
 }
 
 #booking-form{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .booking-input-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin: 5px 0px;
 }
 
 .booking-input-wrapper > label{
     font-family: 'Noto Sans R', sans-serif;
     font-size: 1.3rem;
-    flex-basis: 150px;
+    -ms-flex-preferred-size: 150px;
+        flex-basis: 150px;
 }
 
 .booking-input-wrapper .input-bordered{
@@ -101,7 +126,10 @@ label#chk_info_label{
 
 @media (max-width: 769px) {
     .motel-check{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .motel-check-contents{
         margin: 10px 0px;

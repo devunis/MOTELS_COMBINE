@@ -7,14 +7,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<head>
+    <link rel="stylesheet" href="assets/style/pcon.css" />
+</head>
 <body>
-<p>
+<div id="pcon-wrapper">
     <%
         ArrayList<String> urlList = (ArrayList<String>) request.getAttribute("urlList");
         for( int i=0; i<urlList.size(); i++) {
     %>
-    <a href="psearch?pageNum=<%=i%>&start=<%=request.getParameter("start")%>&end=<%=request.getParameter("end")%>&adults=<%=request.getParameter("adults")%>&kids=<%=request.getParameter("kids")%>&rooms=<%=request.getParameter("rooms")%>"><%=i+1%></a>
+    <a class="pcon-item" href="psearch?pageNum=<%=i%>&start=<%=request.getParameter("start")%>&end=<%=request.getParameter("end")%>&adults=<%=request.getParameter("adults")%>&kids=<%=request.getParameter("kids")%>&rooms=<%=request.getParameter("rooms")%>"><%=i+1%></a>
     <% } %>
-</p>
+</div>
 </body>
 </html>
