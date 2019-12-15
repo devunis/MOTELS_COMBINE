@@ -1,5 +1,7 @@
 package model.member;
 
+import model.booking.BookingBean;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
@@ -133,21 +135,38 @@ public class MemberDAO {
         }
         return location;
     }
-    public String getMemberTel(String email){
+    public String getMemberTel(String email) {
         getConnection();
         String tel = null;
         try {
             String sql = "select tel from member where email = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1,email);
+            pstmt.setString(1, email);
             rs = pstmt.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 tel = rs.getString(1);
             }
             conn.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return tel;
+    }
+    public Boolean memberCheck(String userEmail) {
+        getConnection();
+        boolean hasMember = false;
+        try {
+            String sql = "select email from member where email=?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, userEmail);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                hasMember = true;
+            }
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return hasMember;
     }
 }

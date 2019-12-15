@@ -15,7 +15,7 @@
 <body>
 <%
     String email = (String)session.getAttribute("email");
-    if (email==null){
+    if (email ==null){
         %>
 <script>
     alert('로그인이 필요합니다!');
@@ -40,6 +40,7 @@
 <%
         for (BookingBean b : bean){
 %>
+
     <div class="booking-card" data-aos="fade-left">
         <div class="booked-motel-image">
             <img src="<%=b.getImg()%>" alt="" onclick="location.href='index.jsp?main=/booking/bookingdetail.jsp?no=<%=b.getNo()%>'">
@@ -56,6 +57,5 @@
         <%}%>
 </div>
     <%}%>
-</table>
 </body>
 </html>
