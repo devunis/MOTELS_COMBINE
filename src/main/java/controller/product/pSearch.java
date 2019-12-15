@@ -16,21 +16,28 @@ import java.util.ArrayList;
 @WebServlet("/psearch")
 
 public class pSearch extends HttpServlet {
-    ArrayList<String> urlList;
+    ArrayList<String> urlList = new ArrayList<>();
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("############################");
+        for (String a:
+             urlList) {
+            System.out.println(a);
+        }
+        System.out.println("##########################");
+
+
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
-        final int  pageNum = Integer.parseInt(req.getParameter("pageNum"));
+        int pageNum = Integer.parseInt(req.getParameter("pageNum"));
         System.out.println("url : " + urlList.get(pageNum));
         Document document = null;
-        String selectedUrl = urlList.get(pageNum);
         try {
-            document = Jsoup.connect(selectedUrl).get();
+            document = Jsoup.connect(urlList.get(pageNum)).get();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        ArrayList<pInfo> mlist = new Process().Get(selectedUrl);;
+        ArrayList<pInfo> mlist = new Process().Get(urlList.get(pageNum));;
         req.setAttribute("start",  req.getParameter("checkIn"));
         req.setAttribute("end", req.getParameter("checkOut"));
         req.setAttribute("adults",req.getParameter("adults"));
@@ -44,22 +51,16 @@ public class pSearch extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
-        String checkIn = null;
-        String checkOut = null;
-        String loc = null;
-        String adults = null;
-        String kids =  null;
-        String rooms =  null;
 
 
         if(req.getParameter("pageNum") == null) {
             urlList = new ArrayList<>();
-            checkIn = req.getParameter("start");
-            checkOut = req.getParameter("end");
-            loc = req.getParameter("loc");
-            adults = req.getParameter("adults");
-            kids =  req.getParameter("kids");
-            rooms =  req.getParameter("rooms");
+            String checkIn = req.getParameter("start");
+            String checkOut = req.getParameter("end");
+            String loc = req.getParameter("loc");
+            String adults = req.getParameter("adults");
+            String kids =  req.getParameter("kids");
+            String rooms =  req.getParameter("rooms");
             System.out.println(checkIn);
             System.out.println(checkOut);
             String [] in = checkIn.split("-");
@@ -86,7 +87,7 @@ public class pSearch extends HttpServlet {
                 urlList.add("http://www.booking.com"+li.attr("href"));
                 System.out.println("http://www.booking.com"+li.attr("href"));
             }
-            ArrayList<pInfo> mlist = new Process().Get(urlList.get(0));;
+            ArrayList<pInfo> mlist = new Process().Get(url);
 
             req.setAttribute("start", checkIn);
             req.setAttribute("end", checkOut);
