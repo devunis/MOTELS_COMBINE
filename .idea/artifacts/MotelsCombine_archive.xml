@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="MotelsCombine archive">
-    <output-path>$PROJECT_DIR$/out/artifacts/MotelsCombine_archive</output-path>
-    <root id="archive" name="MotelsCombine archive.war">
-      <element id="artifact" artifact-name="MotelsCombine" />
-    </root>
-  </artifact>
-</component>
