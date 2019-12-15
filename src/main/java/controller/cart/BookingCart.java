@@ -2,7 +2,7 @@ package controller.cart;
 
 import model.booking.BookingBean;
 
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @WebServlet("/insert-cart")
@@ -47,7 +46,6 @@ public class BookingCart extends HttpServlet {
             session.setAttribute("cart",beans);
         }
         resp.sendRedirect("/cart");
-//        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp?main=cart.jsp");
-//        dispatcher.forward(req, resp);
+
     }
 }

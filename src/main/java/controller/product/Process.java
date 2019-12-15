@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 class Process {
@@ -25,11 +26,9 @@ class Process {
         Elements img = element.select("div.sr_item_photo img.hotel_image");
         Elements info = element.select("div.roomNameInner strong");
         List<Integer> item = new ArrayList<>();
+        System.out.println("process start!!");
         item.add(price.size()); item.add(img.size()); item.add(info.size());
-        int num = name.size();
-        for (int i=0; i<item.size(); i++) {
-            if (num > item.get(i)) num = item.get(i);
-        }
+        int num = Collections.min(item);
         System.out.println("num : " + num);
         for (int i=0; i< num; i++) {
             pInfo mi = new pInfo();
@@ -38,9 +37,8 @@ class Process {
             mi.setImg(img.get(i).attr("src"));
             mi.setInfo(info.get(i).text());
             mlist.add(mi);
-        }
-
-        for(int i=0; i<mlist.size(); i++) System.out.println(mlist.get(i));
+            System.out.println(mi);
+        };
         return mlist;
 
     }

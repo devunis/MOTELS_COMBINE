@@ -152,16 +152,16 @@ public class MemberDAO {
         }
         return tel;
     }
-    public Boolean memberCheck(String userEmail) {
+    public String memberCheck(String userEmail) {
         getConnection();
-        boolean hasMember = false;
+        String hasMember = "";
         try {
             String sql = "select email from member where email=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, userEmail);
             rs = pstmt.executeQuery();
             if(rs.next()){
-                hasMember = true;
+                hasMember = "1";
             }
             conn.close();
         } catch (Exception e) {

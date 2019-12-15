@@ -28,10 +28,10 @@ public class BookingProc extends HttpServlet {
             resp.sendRedirect("Error.jsp");
         }
         else {
-            bean.setImg(req.getParameter("img"));
-            bean.setName(req.getParameter("name"));
-            bean.setInfo(req.getParameter("info"));
-            bean.setPrice(req.getParameter("price"));
+            bean.setImg(req.getParameter("img"));//
+            bean.setName(req.getParameter("name"));//
+            bean.setInfo(req.getParameter("info"));//
+            bean.setPrice(req.getParameter("price"));//
             bean.setCheckin(req.getParameter("checkIn"));
             bean.setCheckout(req.getParameter("checkOut"));
             bean.setAdults(Integer.parseInt(req.getParameter("adults")));

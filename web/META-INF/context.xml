@@ -5,5 +5,4 @@
               name="jdbc/mydb" password="mypass" removeAbandoned="true"
               removeAbandonedTimeout="60" type="javax.sql.DataSource"
               url="jdbc:mysql://localhost:3306/motel" username="root" />
-    <!--password="Seungmin20*"-->
 </Context>
