@@ -9,16 +9,26 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../assets/style/board.css" />
 </head>
 <body>
-<form action="/board-update?type=2" method="post">
-    <input type="hidden" name="replyNo" value="<%=request.getParameter("replyNo")%>">
+<div class="container">
+    <div class="update-form-wrapper">
+        <h2>댓글 수정</h2>
+        <form action="/board-update?type=2" method="post">
+            <div class="update-form-contents">
+                <input type="hidden" name="replyNo" value="<%=request.getParameter("replyNo")%>">
+                <label for="content">수정할 내용을 입력하세요</label>
+                <textarea class="input-bordered" name="content" id="content"></textarea>
+            </div>
+            <div class="update-form-password">
+                <label for="pwd">비밀번호를 입력하세요</label>
+                <input class="input-bordered" type="password" id="pwd" name="pwd">
+            </div>
+            <button class="btn-primary align-right">수정</button>
+        </form>
+    </div>
+</div>
 
-    수정할 내용을 입력하세요
-    <textarea name="content" id="content" cols="30" rows="10"></textarea>
-    비밀번호를 입력하세요
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="수정">
-</form>
 </body>
 </html>

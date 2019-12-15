@@ -1,0 +1,40 @@
+@import "root.css";
+
+#booking-detail-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+#booking-detail-img-map-wrapper{
+    width: 40%;
+}
+
+#booking-detail-img-map-wrapper img{
+    width: 100%;
+}
+
+#booking-detail-img-map-wrapper #googleMap{
+    /*width: 100%;*/
+}
+
+#booking-detail-contents-wrapper{
+    width: 60%;
+    box-shadow: #e0e0e0 5px 5px 5px;
+    padding: 10px 20px 20px 20px;
+}
+
+#booking-detail-contents-wrapper table th{
+    width: 45%;
+    text-align: left;
+    letter-spacing: -0.1rem;
+}
+
+#booking-detail-contents-wrapper table td{
+    width: 55%;
+    letter-spacing: -0.1rem;
+}
+
+
+#booking-detail-btn-wrapper{
+
+}

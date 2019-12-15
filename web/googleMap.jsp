@@ -9,6 +9,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+</head>
+<body>
+    <div id="googleMap"></div>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBojZjdtUgqjiD7e94JZSry18X4I3TanpQ&callback=initMap"></script>
     <script>
         function initialize() {
@@ -26,8 +29,5 @@
         }
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-</head>
-<body>
-<div id="googleMap" style="width:200px;height:200px;"></div>
 </body>
 </html>

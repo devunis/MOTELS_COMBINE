@@ -118,14 +118,220 @@ button#board-write span{
 #board-read-wrapper{
     display: flex;
     flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+span#board-read-no{
+    font-family: 'Noto Sans T', sans-serif;
+    font-size: 1.5rem;
+}
+
+h3#board-read-title{
+    font-family: 'Noto Sans R', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 5px 0px;
+}
+
+#board-read-btn-wrapper{
+    align-self: flex-end;
 }
 
 #board-comment-wrapper{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-@media (max-width: 769px) {
+span#board-read-author, span#board-read-date{
+    font-family: 'Noto Sans T', sans-serif;
+    font-size: 1.1rem;
+}
+
+p#board-read-contents{
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.25rem;
+    word-break: break-all;
+    white-space: pre-wrap;
+    margin: 5px 0px;
+    padding: 10px;
+}
+
+#board-read{
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 30px;
+    padding: 10px 10px 10px 10px;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: #e0e0e0 5px 5px 14px;
+}
+
+#board-comment-wrapper{
+    flex-grow: 0;
+}
+
+#board-comment-wrapper h3{
+    font-size: 1.8rem;
+    font-family: 'Noto Sans R', sans-serif;
+    letter-spacing: -0.1rem;
+    margin: 0px 0px 20px 0px;
+}
+
+#board-comment-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+#board-comment-form form > *{
+    width: 100%;
+}
+
+#board-comment-form form textarea{
+    margin-bottom: 10px;
+    height: 90px;
+}
+
+#board-comment-form form button{
+    width: 150px;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+#board-comment-idpw-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#board-comment-idpw-wrapper input{
+    flex-grow: 1;
+    margin-bottom: 10px;
+    max-width: calc(50% - 10px);
+}
+
+#board-comment-idpw-wrapper input:nth-child(1){
+    /*아이디*/
+    margin-right: 10px;
+}
+
+.comment-item{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.comment-item-contents-wrapper{
+
+}
+
+span#comment-author, span#comment-date{
+    font-family: 'Noto Sans T', sans-serif;
+    font-size: 1.1rem;
+}
+
+p#comment-contents{
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+
+/* UPDATE - 게시글, 댓글 공통 */
+
+.update-form-wrapper{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.update-form-wrapper h2{
+    font-size: 3rem;
+    font-family: 'Noto Sans B', sans-serif;
+    font-weight: normal;
+}
+
+.update-form-wrapper form{
+    display: flex;
+    flex-direction: column;
+}
+
+.update-form-contents{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.update-form-contents label{
+    width: 100%;
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.2rem;
+    margin: 10px 0px;
+}
+
+.update-form-contents textarea{
+    min-height: 300px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.update-form-password{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.update-form-password label{
+    width: 100%;
+    margin: 10px 0px;
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.2rem;
+}
+
+.update-form-password input{
+    flex-grow: 1;
+    width: 100%;
+}
+
+.update-form-wrapper button{
+    width: 150px;
+
+}
+
+/* DELETE : 댓글, 본문 공통 */
+.board-delete-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: calc(100vh - 100px);
+
+    background-image: url("../../assets/image/login_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-attachment: fixed;
+}
+
+.board-delete-wrapper form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.board-delete-wrapper form button{
+    margin-top: 20px;
+}
+
+@media (max-width: 1023px) {
     #board-wrapper{
         display: flex;
         flex-direction: column;
@@ -134,5 +340,21 @@ button#board-write span{
     #board-card{
         width: 100%;
     }
+
+    /*BOARD READ*/
+    #board-read-wrapper{
+        flex-direction: column;
+    }
+    #board-read{
+        width: 100%;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: #e0e0e0 2px solid;
+        border-right: none;
+    }
+
+    /* UPDATE - 게시글, 댓글 공통 */
+
+
 }
 

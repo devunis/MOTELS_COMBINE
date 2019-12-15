@@ -4,5 +4,9 @@
               logAbandoned="true" maxActive="1000" maxIdle="30" maxWait="180"
               name="jdbc/mydb" password="Seungmin20*" removeAbandoned="true"
               removeAbandonedTimeout="60" type="javax.sql.DataSource"
+<<<<<<< HEAD
               url="jdbc:mysql://localhost:3306/motel" username="root" />
+=======
+              url="jdbc:mysql://localhost:3306/motel" username="eurobin4321" />
+>>>>>>> 1b19db312e8c1a3cfe612eba0ad2aa8cd301c2f4
 </Context>
