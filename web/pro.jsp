@@ -58,7 +58,7 @@
                     <input type="hidden" name="name" value="<%=p.getName()%>">
                     <input type="hidden" name="info" value="<%=p.getInfo()%>">
                     <input type="hidden" name="price" value="<%=p.getPrice()%>">
-                    <button class="btn-primary" type=margin: 10px 0px 0px 10px;"submit">찜하기</button>
+                    <button class="btn-primary" style="margin: 10px 0px 0px 10px;" type="submit">찜하기</button>
                 </form>
             </div>
         </div>

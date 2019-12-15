@@ -41,7 +41,7 @@
             <form id="signup-form" action="/proc.do" method="POST">
                 <div class="form-item-wrapper">
                     <label for="email">이메일</label>
-                    <input type="email" id="email" class="input-bordered" name="email" placeholder="이메일" />
+                    <input type="email" id="email" class="input-bordered" name="email" placeholder="이메일" onkeyup="memberCheck()"/>
 <%--                    <button class="btn-primary" onclick="memberCheck()" onsubmit="return false;">아이디 중복 확인</button>--%>
                     <div id="checkemail"></div>
                 </div>

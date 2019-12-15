@@ -21,16 +21,17 @@ public class MemberCheck extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
         String userID = req.getParameter("userID");
+
         System.out.println("멤버확인");
-        JSONObject json = new JSONObject();
         try {
             String check = new MemberDAO().memberCheck(userID)+"";
-            json.put("check",check);
+            resp.setContentType("application/json");
+            JSONObject json = new JSONObject();
+            resp.getWriter().write(json.toString());
         }catch (Exception e){
             e.printStackTrace();
         }
 
-        resp.setContentType("application/json");
-        resp.getWriter().write(json.toString());
+
     }
 }
