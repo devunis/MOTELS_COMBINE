@@ -4,6 +4,8 @@
 #main-catch{
     /*background-color: black;*/
     /*padding: 50px 0px;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: calc(100vh - 50px);
     background-image: url(../../assets/image/catch2.jpg);
@@ -40,6 +42,10 @@
     background-position-y: top;
     background-attachment: fixed;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
 }
 
@@ -64,9 +70,16 @@
 }
 
 #main-catch > .container, #main-search > .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .input-wrapper{
@@ -75,7 +88,9 @@
 
 
 #start, #end{
-    flex-grow: 2;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
 }
 
 #start{
@@ -92,7 +107,9 @@
     border-radius: 16px;
     font-size: 1rem;
     background-color: white;
-    flex-grow: 0.9;
+    -webkit-box-flex: 0.9;
+        -ms-flex-positive: 0.9;
+            flex-grow: 0.9;
 }
 
 
@@ -109,7 +126,9 @@ label[for="start"],label[for="end"], label[for="location"], label[for="adults"],
     font-size: 1.5rem;
     font-family: 'Noto Sans T', sans-serif;
     font-weight: bold;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 
@@ -165,6 +184,7 @@ label[for="location"] {
     }
 
     #adults, #kids, #rooms, #start, #end{
-        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
     }
 }

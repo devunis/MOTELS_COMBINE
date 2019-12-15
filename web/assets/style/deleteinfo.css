@@ -3,9 +3,15 @@
 #delete-info-wrapper{
     width: 100%;
     height: calc(100% - 100px);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
     background-image: url("../../assets/image/login_bg.jpg");
     background-size: cover;
