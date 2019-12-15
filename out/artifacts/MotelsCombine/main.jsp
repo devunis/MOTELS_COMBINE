@@ -27,7 +27,7 @@
             <div class="content-overlay-white" data-aos="fade-down" data-aos-duration="900" data-aos-delay="300">
                 <h3>여행 일정이 어떻게 되시나요?</h3>
                 <hr class="devider-black mb-1"/>
-                <form action="psearch" method="post">
+                <form id="reservation-form" action="psearch" method="post">
                     <div class="row-wrapper">
                         <label for="start">체크인</label>
                         <input class="input-primary" type="date" id="start" name="start">
