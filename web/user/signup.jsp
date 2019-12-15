@@ -9,28 +9,41 @@
 
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <link rel="stylesheet" href="assets/style/signup.css" />
-    <script>
-        function memberCheck() {
-            var userID = document.querySelector("#email").value;
-            var data = JSON.stringify({"id":userID});
-            var url = "http://" + window.location.hostname + ":" + window.location.port + "/member-check";
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST",url);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(data);
+    <script type="text/javascript">
+        function pwdCheck() {
+            var pw1 = $('#pw').val();
+            var pw2 = $('#pw2').val();
+            if (pw1 === pw2){
+                $('#checkepassword').html("사용 가능");
+                $('#checkepassword').css("color","blue")
+            }
+            else{
+                $('#checkepassword').html("사용 불가");
+                $('#checkepassword').css("color","red")
+            }
 
-            xhr.addEventListener("onload", function (evt) {
-                var data = JSON.parse(xhr.responseText);
-                if (data == "1"){
-                    document.querySelector("#checkemail").style.color= "red";
-                    document.querySelector("#checkemail").innerHTML = "사용할 수 없습니다."
+        }
+        function memberCheck() {
+            var email = $('#email').val();
+            $.ajax({
+                type: 'POST',
+                url: './member-check',
+                data: {email:email},
+                success: function (result) {
+                    if (result == 1){
+                        $('#checkemail').html("사용할 수 없는 아이디입니다.");
+                        $('#checkepassword').css("color","red")
+                    }
+                    else {
+                        $('#checkemail').html("사용할 수 있는 아이디입니다.");
+                        $('#checkepassword').css("color","blue")
+
+                    }
                 }
-                else{
-                    document.querySelector("#checkemail").style.color= "blue";
-                    document.querySelector("#checkemail").innerHTML = "사용 가능합니다."
-                }
-            })
+            });
+
         }
     </script>
 </head>
@@ -41,17 +54,17 @@
             <form id="signup-form" action="/proc.do" method="POST">
                 <div class="form-item-wrapper">
                     <label for="email">이메일</label>
-                    <input type="email" id="email" class="input-bordered" name="email" placeholder="이메일" />
-<%--                    <button class="btn-primary" onclick="memberCheck()" onsubmit="return false;">아이디 중복 확인</button>--%>
+                    <input type="email" id="email" class="input-bordered" name="email" placeholder="이메일" onkeyup="memberCheck()"/>
                     <div id="checkemail"></div>
                 </div>
                 <div class="form-item-wrapper">
                     <label for="pw">비밀번호</label>
-                    <input type="password" id="pw" class="input-bordered" name="pw" />
+                    <input type="password" id="pw" class="input-bordered" name="pw" onkeyup="pwdCheck()"/>
                 </div>
                 <div class="form-item-wrapper">
                     <label for="pw2">비밀번호 중복확인</label>
-                    <input type="password" id="pw2" class="input-bordered" name="pw2" />
+                    <input type="password" id="pw2" class="input-bordered" name="pw2" onkeyup="pwdCheck()" />
+                    <div id="checkepassword"></div>
                 </div>
                 <div class="form-item-wrapper">
                     <label for="name">닉네임</label>
