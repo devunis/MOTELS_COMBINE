@@ -48,6 +48,18 @@
                     <input type="hidden" name="price" value="<%=p.getPrice()%>">
                     <button class="btn-primary" style="margin: 10px 0px 0px 10px;" type="submit">예약하기</button>
                 </form>
+                <form action="insert-cart" method="post">
+                    <input type="hidden" name="checkIn" value="<%=request.getParameter("start")%>"\>
+                    <input type="hidden" name="checkOut" value="<%=request.getParameter("end")%>">
+                    <input type="hidden" name="adults" value="<%=request.getParameter("adults")%>">
+                    <input type="hidden" name="kids" value="<%=request.getParameter("kids")%>">
+                    <input type="hidden" name="rooms" value="<%=request.getParameter("rooms")%>">
+                    <input type="hidden" name="img" value="<%=p.getImg()%>">
+                    <input type="hidden" name="name" value="<%=p.getName()%>">
+                    <input type="hidden" name="info" value="<%=p.getInfo()%>">
+                    <input type="hidden" name="price" value="<%=p.getPrice()%>">
+                    <button class="btn-primary" type=margin: 10px 0px 0px 10px;"submit">찜하기</button>
+                </form>
             </div>
         </div>
     </div>
