@@ -9,13 +9,18 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../assets/style/board.css" />
 </head>
 <body>
-<form action="/board-delete?type=1" method="post">
-    비밀번호를 입력하세요
-    <input type="hidden" name="boardNo" value="<%=request.getParameter("boardNo")%>">
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="삭제">
-</form>
+<div class="board-delete-wrapper">
+    <form class="content-overlay-dark" action="/board-delete?type=1" method="post">
+        <h2>후기 삭제</h2>
+        <p>비밀번호를 입력하세요</p>
+        <input type="hidden" name="boardNo" value="<%=request.getParameter("boardNo")%>">
+        <input class="input-bordered" type="password" id="pwd" name="pwd">
+        <button class="btn-primary align-right">삭제</button>
+    </form>
+</div>
+
 </body>
 </html>
