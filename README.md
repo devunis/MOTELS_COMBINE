@@ -29,7 +29,7 @@
         ref      int         not null,
         ref_step int         not null
 
-    )
+    );
  
     create table reply (
         no int primary key auto_increment not null ,

@@ -32,13 +32,16 @@
                     <button class="btn-primary" onclick="location.href='index.jsp?main=/board/boardDelete.jsp&boardNo=<%=boardBean.getNo()%>'">글 삭제</button>
                 </div>
             </div>
-
+            <%
+                String username = (String)session.getAttribute("name");
+                if (username == null) username = "GUEST";
+            %>
             <div id="board-comment-wrapper">
                 <h3>코멘트</h3>
                 <div id="board-comment-form">
                     <form action="/register?type=2" method="post">
                         <div id="board-comment-idpw-wrapper">
-                            <input type="text" class="input-bordered" name="author" value="<%=(String)session.getAttribute("name")%>">
+                            <input type="text" class="input-bordered" name="author" value="<%=username%>">
                             <input type="password" class="input-bordered" name="pw" placeholder="비밀번호입력">
                         </div>
                         <textarea class="input-bordered" name="contents" id="" cols="30" rows="10"></textarea>

@@ -22,6 +22,13 @@
     <div class="jumbotron">
         <h2 id="board-heading">숙박 후기</h2>
         <p id="board-description">총<%=totalLength%>개의 후기를 보실 수 있습니다.</p>
+        <div>
+            <form action="board-search" method="post">
+                검색 : <input type="text" name="keyword" required>
+                <input type="submit" value="검색">
+                <button onclick="location.href='index.jsp?main=/board/boardmain.jsp'">전체글 조회</button>
+            </form>
+        </div>
     </div>
     <div id="board-wrapper">
         <% for (BoardBean boardBean : list) {%>

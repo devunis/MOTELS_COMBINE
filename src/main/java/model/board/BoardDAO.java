@@ -64,6 +64,35 @@ public class BoardDAO {
         return cnt;
     }
 
+    //검색된 게시글 조회
+    public List<BoardBean> searchBoard(String keyword) {
+        List<BoardBean> selectBoardList = new ArrayList<>();
+        getConnection();
+
+        try{
+            String sql = "select * from board where title like '%"+keyword+"%' or contents like '%"+keyword+"%'";
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while(rs.next()) {
+                BoardBean boardBean = new BoardBean();
+                boardBean.setNo(rs.getInt(1));
+                boardBean.setTitle(rs.getString(2));
+                boardBean.setAuthor(rs.getString(3));
+                boardBean.setPw(rs.getString(4));
+                boardBean.setDate(rs.getString(5));
+                boardBean.setContents(rs.getString(6));
+                boardBean.setReadcnt(rs.getInt(7));
+                boardBean.setRef_step(rs.getInt(8));
+                boardBean.setRef_step(rs.getInt(9));
+                selectBoardList.add(boardBean);
+            }
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return selectBoardList;
+    }
 
     //게시글 전체 조회(최신글순)
     public List<BoardBean> showAll() {
