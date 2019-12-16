@@ -40,7 +40,7 @@ public class BoardRegister extends HttpServlet {
             boardBean.setPw(req.getParameter("pw"));
             bdao.insertReply(boardBean);
             //PrintWriter out = resp.getWriter();
-            resp.sendRedirect("index.jsp?main=/board/boardmain.jsp");
+            resp.sendRedirect("index.jsp?main=/board/read=no="+Integer.parseInt(req.getParameter("ref")));
             //out.println("<script>history.go(-1)</script>");
         }
 
