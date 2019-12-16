@@ -30,6 +30,40 @@ p#board-description{
     letter-spacing: -0.1rem;
 }
 
+#board-search-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    justify-content: flex-end;
+}
+
+#board-search-wrapper > button{
+    padding: 7px 17px;
+    margin-left: 5px;
+}
+
+form#board-search-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+}
+
+form#board-search-form > input{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: none;
+    font-size: 1.1rem;
+}
+form#board-search-form > button{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 34px !important;
+}
+
+
+
 #board-wrapper{
     display: -webkit-box;
     display: -ms-flexbox;
