@@ -10,8 +10,8 @@
 
 <body>
 <script>
-    alert('회원정보가 일치하지 않습니다\n로그인페이지로 넘어갑니다');
-    history.go(-1)
+    alert('로그인이 필요합니다!');
+    history.go(-1);
 </script>
 </body>
 </html>

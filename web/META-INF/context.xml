@@ -2,7 +2,7 @@
 <Context path="/">
     <Resource ayth="Container" driverClassName="com.mysql.jdbc.Driver"
               logAbandoned="true" maxActive="1000" maxIdle="30" maxWait="180"
-              name="jdbc/mydb" password="hong1128." removeAbandoned="true"
+              name="jdbc/mydb" password="Seungmin20*" removeAbandoned="true"
               removeAbandonedTimeout="60" type="javax.sql.DataSource"
-              url="jdbc:mysql://localhost:3306/motel" username="eurobin4321" />
+              url="jdbc:mysql://localhost/hsm012362" username="hsm012362" />
 </Context>
