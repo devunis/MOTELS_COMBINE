@@ -1,4 +1,10 @@
 $(document).ready(function () {
+
+    /* 페이크 로딩 */
+    setTimeout(function () {
+        $("#loading").fadeOut();
+    }, 500);
+
     /* ELEMENTS */
     var mobileMenuBar = $("#mobile-menu-bar");
     var mobileMenuList = $('#mobile-menu-list');
@@ -12,6 +18,11 @@ $(document).ready(function () {
     var rooms = $("#rooms");
     var reservationForm = $("#reservation-form");
 
+    /* 후기 작성 예외처리 */
+    var writeTitle = $("#write-title-wrapper > input");
+    var writeContents = $("#write-contents-wrapper > textarea");
+    var writeForm = $("#write-form-wrapper");
+    var wrtieBtn = $("#write-btn");
 
 
     /* EVENTS */
@@ -22,6 +33,10 @@ $(document).ready(function () {
 
     if(mainSearchBtn.length){
         searchRequire(mainSearchBtn, start, end, adults, rooms, reservationForm);
+    }
+
+    if(writeTitle.length && writeContents.length) {
+        writeRequire(writeTitle, writeContents, writeForm, wrtieBtn);
     }
 });
 
@@ -69,4 +84,29 @@ function searchRequire(mainSearchBtn, start, end, adults, rooms, reservationForm
         }
 
     })
+}
+
+function writeRequire(writeTitle, writeContents, writeForm, writeBtn) {
+    var req1 = false;
+    var req2 = false;
+
+    writeBtn.click(function (e) {
+        e.preventDefault();
+        if(writeTitle.val() == "") {
+            alert("제목을 입력 하셔야 합니다.");
+        }
+        else{
+            req1 = true;
+        }
+        if(writeContents.val() == "") {
+            alert("후기 내용을 입력 하셔야 합니다.");
+        }
+        else{
+            req2 = true;
+        }
+        if(req1 && req2){
+            writeForm.submit();
+        }
+    });
+
 }

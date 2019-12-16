@@ -34,11 +34,11 @@
                 success: function (result) {
                     if (result == 1){
                         $('#checkemail').html("사용할 수 없는 아이디입니다.");
-                        $('#checkepassword').css("color","red")
+                        $('#checkemail').css("color","red")
                     }
                     else {
                         $('#checkemail').html("사용할 수 있는 아이디입니다.");
-                        $('#checkepassword').css("color","blue")
+                        $('#checkemail').css("color","blue")
 
                     }
                 }

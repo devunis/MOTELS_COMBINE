@@ -1,0 +1,60 @@
+@import "root.css";
+
+h2{
+    font-family: 'Noto Sans B', sans-serif;
+    font-size: 2rem;
+}
+
+form#write-form-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+form#write-form-wrapper label{
+    font-family: 'Noto Sans R', sans-serif;
+    font-size: 1.2rem;
+    width: 60px;
+    flex-grow: 0;
+    margin-right: 10px;
+}
+
+#write-title-wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#write-title-wrapper input{
+    flex-grow: 1;
+}
+
+#write-author-pw-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+label[for="pw"]{
+    margin-left: 15px;
+}
+
+#write-author-pw-wrapper input{
+    flex-grow: 1;
+}
+
+#write-contents-wrapper{
+    margin: 20px 0px 10px 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#write-contents-wrapper textarea{
+    width: 100%;
+    min-height: 300px;
+    font-size: 1.1rem;
+}
+
+#write-form-wrapper button{
+    margin-top: 0px;
+}

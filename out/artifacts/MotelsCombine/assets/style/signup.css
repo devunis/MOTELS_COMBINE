@@ -7,24 +7,36 @@ h2{
 
 #signup-form-wrapper, #update-form-wrapper{
     padding: 15px;
-    box-shadow: #e0e0e0 5px 5px 14px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 14px;
+            box-shadow: #e0e0e0 5px 5px 14px;
 }
 
 #signup-form, #update-form{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 #signup-form .form-item-wrapper, #update-form .form-item-wrapper{
     margin-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .form-item-wrapper label{
     display: inline-block;
-    flex-basis: 160px;
+    -ms-flex-preferred-size: 160px;
+        flex-basis: 160px;
     width: 160px;
     font-family: 'Noto Sans R', sans-serif;
     font-size: 1.2rem;
@@ -52,12 +64,16 @@ h2{
 
 @media (max-width: 769px) {
     #signup-form .form-item-wrapper, #update-form .form-item-wrapper{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         width:100%;
     }
 
     .form-item-wrapper label{
         width:100%;
-        flex-basis: initial;
+        -ms-flex-preferred-size: initial;
+            flex-basis: initial;
     }
 }

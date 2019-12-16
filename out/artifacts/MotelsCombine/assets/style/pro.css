@@ -26,9 +26,15 @@ header.normal-header p{
     height: 250px;
     border-radius: 15px;
     margin: 15px 0px;
-    box-shadow: #e0e0e0 5px 5px 14px;
+    -webkit-box-shadow: #e0e0e0 5px 5px 14px;
+            box-shadow: #e0e0e0 5px 5px 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     word-break: break-all;
 }
 
@@ -54,9 +60,16 @@ header.normal-header p{
 .motel-card-info{
     padding: 20px 10px;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .motel-info h3{
@@ -77,9 +90,15 @@ header.normal-header p{
 .motel-price-reserve{
     width: 100%;
     text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center !important;
-    justify-content: flex-end;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 }
 
 .motel-price-reserve button{
@@ -108,8 +127,13 @@ span.motel-price{
 
 @media (max-width: 500px) {
     .motel-card{
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .motel-card-info{
