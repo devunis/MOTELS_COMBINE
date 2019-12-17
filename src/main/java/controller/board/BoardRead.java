@@ -22,6 +22,7 @@ public class BoardRead extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int boardNo = 0;
+
         if(req.getParameter(("no")) != null) {
             boardNo = Integer.parseInt(req.getParameter("no"));
         } else {

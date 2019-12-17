@@ -24,8 +24,9 @@
             <div class="update-form-password">
                 <label for="pwd">비밀번호를 입력하세요</label>
                 <input class="input-bordered" type="password" id="pwd" name="pwd">
+                <input type="hidden" name="no" value="<%=request.getParameter("no")%>">
             </div>
-            <button class="btn-primary align-right">수정</button>
+            <button type="submit" class="btn-primary align-right">수정</button>
         </form>
     </div>
 </div>

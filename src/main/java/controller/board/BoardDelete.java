@@ -15,17 +15,13 @@ import java.io.IOException;
 public class BoardDelete extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
+        doPost(req, resp);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
-    private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         BoardDAO bdao = new BoardDAO();
         String inputpwd = req.getParameter("pwd");
-        String no = req.getParameter("no");
         if (req.getParameter("type").equals("1")){
             int boardNo = Integer.parseInt(req.getParameter("boardNo").trim());
             if (bdao.checkPwd(boardNo, inputpwd,1)) {
@@ -37,6 +33,7 @@ public class BoardDelete extends HttpServlet {
             }
         }
         else {
+            String no = req.getParameter("no");
             int replyNo = Integer.parseInt(req.getParameter("replyNo").trim());
 
             if (bdao.checkPwd(replyNo, inputpwd,2)) {
@@ -52,3 +49,4 @@ public class BoardDelete extends HttpServlet {
 
     }
 }
+

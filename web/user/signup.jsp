@@ -13,16 +13,19 @@
     <link rel="stylesheet" href="../assets/style/signup.css" />
     <script type="text/javascript">
         function pwdCheck() {
-            var pw1 = $('#pw').val();
-            var pw2 = $('#pw2').val();
-            if (pw1 === pw2){
-                $('#checkepassword').html("사용 가능");
-                $('#checkepassword').css("color","blue")
-            }
-            else{
-                $('#checkepassword').html("사용 불가");
-                $('#checkepassword').css("color","red")
-            }
+
+                var pw1 = $('#pw').val();
+                var pw2 = $('#pw2').val();
+                if (pw1.length > 0) {
+                    if (pw1 === pw2){
+                        $('#checkepassword').html("사용 가능");
+                        $('#checkepassword').css("color","blue")
+                    }
+                    else{
+                        $('#checkepassword').html("사용 불가");
+                        $('#checkepassword').css("color","red")
+                    }
+                }
 
         }
         function memberCheck() {
