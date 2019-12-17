@@ -15,13 +15,10 @@ import java.io.PrintWriter;
 @WebServlet("/register")
 public class BoardRegister extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
+        doGet(req, resp);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
-    private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         BoardDAO bdao = new BoardDAO();
         BoardBean boardBean = new BoardBean();
@@ -40,12 +37,13 @@ public class BoardRegister extends HttpServlet {
             boardBean.setPw(req.getParameter("pw"));
             bdao.insertReply(boardBean);
             //PrintWriter out = resp.getWriter();
-            resp.sendRedirect("index.jsp?main=/board/read=no="+Integer.parseInt(req.getParameter("ref")));
+            String no = req.getParameter("ref");
+            req.setAttribute("no", no);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/read");
+            dispatcher.forward(req,resp);
+            //resp.sendRedirect("/read=no="+no);
             //out.println("<script>history.go(-1)</script>");
         }
-
-
-
     }
 }
 

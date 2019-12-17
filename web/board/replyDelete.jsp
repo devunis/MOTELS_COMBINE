@@ -5,7 +5,7 @@
   Time: 11:51 오후
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Title</title>
@@ -17,6 +17,7 @@
             <h2>댓글 삭제</h2>
             <p>비밀번호를 입력하세요</p>
             <input type="hidden" name="replyNo" value="<%=request.getParameter("replyNo")%>">
+            <input type="hidden" name="no" value="<%=request.getParameter("no")%>">
             <input class="input-bordered" type="password" id="pwd" name="pwd">
             <button class="btn-primary align-right">삭제</button>
         </form>

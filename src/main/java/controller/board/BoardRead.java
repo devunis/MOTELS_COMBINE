@@ -21,8 +21,15 @@ public class BoardRead extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int boardNo = 0;
+        if(req.getParameter(("no")) != null) {
+            boardNo = Integer.parseInt(req.getParameter("no"));
+        } else {
+            String s_no = (String) req.getAttribute("no");
+            boardNo = Integer.parseInt(s_no);
+        }
 
-        int boardNo = Integer.parseInt(req.getParameter("no"));
+
 
         //게시글
         BoardDAO bdao = new BoardDAO();

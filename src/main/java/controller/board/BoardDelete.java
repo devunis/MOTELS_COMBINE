@@ -3,6 +3,7 @@ package controller.board;
 import model.board.BoardBean;
 import model.board.BoardDAO;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +22,10 @@ public class BoardDelete extends HttpServlet {
         reqPro(req, resp);
     }
     private void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
         BoardDAO bdao = new BoardDAO();
         String inputpwd = req.getParameter("pwd");
+        String no = req.getParameter("no");
         if (req.getParameter("type").equals("1")){
             int boardNo = Integer.parseInt(req.getParameter("boardNo").trim());
             if (bdao.checkPwd(boardNo, inputpwd,1)) {
@@ -35,9 +38,13 @@ public class BoardDelete extends HttpServlet {
         }
         else {
             int replyNo = Integer.parseInt(req.getParameter("replyNo").trim());
+
             if (bdao.checkPwd(replyNo, inputpwd,2)) {
                 bdao.deleteBoard(replyNo,2);
-                resp.sendRedirect("index.jsp?main=/board/boardmain.jsp");
+
+                req.setAttribute("no", no);
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/read");
+                dispatcher.forward(req,resp);
             } else {
                 resp.sendRedirect("Error.jsp");
             }

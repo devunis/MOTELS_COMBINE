@@ -63,8 +63,8 @@
                         </div>
                         <p id="comment-contents"><%=rep.getContents()%></p>
                         <div id="comment-item-btn-wrapper" class="align-right">
-                            <button class="btn-primary" onclick="location.href='index.jsp?main=/board/replyUpdate.jsp&replyNo=<%=rep.getNo()%>'">수정하기</button>
-                            <button class="btn-primary" onclick="location.href='index.jsp?main=/board/replyDelete.jsp&replyNo=<%=rep.getNo()%>'">삭제하기</button>
+                            <button class="btn-primary" onclick="location.href='index.jsp?main=/board/replyUpdate.jsp&replyNo=<%=rep.getNo()%>&no=<%=boardBean.getNo()%>'">수정하기</button>
+                            <button class="btn-primary" onclick="location.href='index.jsp?main=/board/replyDelete.jsp&replyNo=<%=rep.getNo()%>&no=<%=boardBean.getNo()%>'">삭제하기</button>
                         </div>
                     </div>
                     <% } %>
