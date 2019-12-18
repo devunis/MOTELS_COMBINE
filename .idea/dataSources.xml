@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="motel@localhost" uuid="f900dfb5-bd71-4fdd-b0a3-9e350a7ac6e0">
+    <data-source source="LOCAL" name="heroku_0d58aebdfff05c1@us-cdbr-iron-east-05.cleardb.net" uuid="5afa9ee6-0abe-4a02-b1c3-469c82086de6">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/motel</jdbc-url>
-      <driver-properties>
-        <property name="serverTimezone" value="Asia/Seoul" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="@umj7-005.cafe24.com" uuid="9298e407-d098-4909-8dec-6238ddba8192">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://umj7-005.cafe24.com/</jdbc-url>
+      <jdbc-url>jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_0d58aebdfff05c1</jdbc-url>
     </data-source>
   </component>
 </project>
